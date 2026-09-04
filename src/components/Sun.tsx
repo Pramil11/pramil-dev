@@ -1,4 +1,12 @@
+import {usePlanetStore} from "../store/planetStore";
+
+
 export default function Sun(){
+
+    const setPlanet =
+    usePlanetStore(
+        (state)=>state.setPlanet
+    );
 
 
 return (
@@ -6,7 +14,21 @@ return (
 <>
 
 
-<mesh>
+<mesh
+
+onClick={()=>{
+
+setPlanet({
+
+name:"Sun",
+
+position:[0,0,0]
+
+});
+
+}}
+
+>
 
 
 <sphereGeometry

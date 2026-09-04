@@ -1,5 +1,6 @@
 import { useTexture, Html } from "@react-three/drei";
 import * as THREE from "three";
+import {usePlanetStore} from "../store/planetStore";
 
 
 type Props = {
@@ -33,21 +34,43 @@ export default function Planet({
 const map = useTexture(texture);
 
 
+const setPlanet =
+usePlanetStore(
+    state=>state.setPlanet
+);
+
+
 
 return (
+
 
 <group position={position}>
 
 
     {/* Planet */}
 
-    <mesh>
+    <mesh
+
+    onClick={()=>{
+
+        setPlanet({
+
+            name:name,
+
+            position:position
+
+        });
+
+
+    }}
+
+    >
 
 
         <sphereGeometry
 
         args={[
-            size,
+            size * 1.4,
             64,
             64
         ]}
@@ -67,11 +90,11 @@ return (
 
             emissiveIntensity={0.2}
 
-            />
-
+        />
 
 
     </mesh>
+
 
 
 
@@ -104,8 +127,8 @@ return (
         />
 
 
-
     </mesh>
+
 
 
 
@@ -118,6 +141,7 @@ return (
     distanceFactor={12}
 
     >
+
 
         <div
 
@@ -143,6 +167,7 @@ return (
 
             {name}
 
+
         </div>
 
 
@@ -154,6 +179,5 @@ return (
 
 
 )
-
 
 }

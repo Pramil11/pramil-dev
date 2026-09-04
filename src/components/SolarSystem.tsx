@@ -24,9 +24,9 @@ name="Mercury"
 
 texture="/textures/mercury.jpg"
 
-position={[-3,2,0]}
+position={[-3,2,-3]}
 
-size={0.3}
+size={0.5}
 
 />
 
@@ -40,9 +40,9 @@ name="Venus"
 
 texture="/textures/venus.jpg"
 
-position={[3,2.4,0.5]}
+position={[4,3,1]}
 
-size={0.5}
+size={0.65}
 
 />
 
@@ -56,9 +56,9 @@ name="Earth"
 
 texture="/textures/earth.jpg"
 
-position={[-6,2.2,0]}
+position={[-6,4,2]}
 
-size={0.65}
+size={0.7}
 
 />
 
@@ -72,9 +72,9 @@ name="Mars"
 
 texture="/textures/mars.jpg"
 
-position={[0,-4.,0]}
+position={[-2,-5.,1]}
 
-size={0.45}
+size={0.6}
 
 />
 
@@ -88,7 +88,7 @@ name="Jupiter"
 
 texture="/textures/jupiter.jpg"
 
-position={[-6,-2.3,0]}
+position={[-9,-3.3,3]}
 
 size={1.35}
 
@@ -104,7 +104,7 @@ name="Saturn"
 
 texture="/textures/saturn.jpg"
 
-position={[7,0.4,0]}
+position={[10,0.4,0]}
 
 size={1.15}
 
@@ -120,7 +120,7 @@ name="Uranus"
 
 texture="/textures/uranus.jpg"
 
-position={[4.5,-4.5,0]}
+position={[6.5,-8,0]}
 
 size={0.9}
 
@@ -136,7 +136,7 @@ name="Neptune"
 
 texture="/textures/neptune.jpg"
 
-position={[0,5,-2]}
+position={[0,7,-2]}
 
 size={0.9}
 
