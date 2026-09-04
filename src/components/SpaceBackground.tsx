@@ -1,69 +1,44 @@
-import { Stars } from "@react-three/drei";
-import * as THREE from "three";
-import { useTexture } from "@react-three/drei";
+import { useTexture, Stars } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
+import { useEffect } from "react";
 
 
 export default function SpaceBackground(){
 
-const background = useTexture(
-    "/textures/background.png"
-);
+    const texture = useTexture("/textures/background.png");
+
+    const { scene } = useThree();
 
 
-return(
+    useEffect(()=>{
 
-<>
+        texture.mapping = 300; // EquirectangularReflectionMapping
 
+        scene.background = texture.clone();
 
-{/* Galaxy background image */}
-
-<mesh
-
-position={[0,0,-80]}
-
-scale={[100,60,1]}
-
->
-
-<planeGeometry />
+    },[texture,scene]);
 
 
-<meshBasicMaterial
+    return (
 
-map={background}
+        <Stars
 
-side={THREE.BackSide}
+            radius={120}
 
-/>
+            depth={80}
 
+            count={2500}
 
-</mesh>
+            factor={1.5}
 
+            saturation={0}
 
+            fade
 
-{/* Extra small stars */}
+            speed={0.2}
 
-<Stars
+        />
 
-radius={150}
-
-depth={100}
-
-count={3000}
-
-factor={2}
-
-saturation={0}
-
-fade
-
-speed={0.1}
-
-/>
-
-
-</>
-
-)
+    )
 
 }
