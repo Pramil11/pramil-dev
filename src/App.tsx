@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import SolarSystem from "./components/SolarSystem";
 import SpaceBackground from "./components/SpaceBackground";
 import CameraController from "./components/CameraController";
+import PlanetPanel from "./components/PlanetPanel";
 import {usePlanetStore} from "./store/planetStore";
 
 import Sidebar from "./components/UI/Sidebar";
@@ -15,11 +16,10 @@ import BottomCards from "./components/UI/BottomCards";
 
 
 function App(){
-
-const selectedPlanet =
-usePlanetStore(
-(state)=>state.selectedPlanet
-);
+  const selectedPlanet =
+  usePlanetStore(
+  state=>state.selectedPlanet
+  );
 return (
 
 <div
@@ -66,13 +66,7 @@ fov:50
 
 <SolarSystem />
 
-<CameraController
-
-target={
-selectedPlanet?.position ?? null
-}
-
-/>
+<CameraController/>
 
 
 {/* Lighting */}
@@ -124,29 +118,29 @@ radius={0.9}
 
 </Canvas>
 
-
+<PlanetPanel/>
 
 
 
 {/* Interface */}
 
+{
+!selectedPlanet && (
+<>
 <Sidebar />
-
 
 <WelcomeCard />
 
-
 <SystemCard />
 
-
 <BottomCards />
-
-
+</>
+)
+}
 
 </div>
 
-)
-
+);
 }
 
 

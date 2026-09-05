@@ -1,21 +1,9 @@
 import { CameraControls } from "@react-three/drei";
 import { useEffect, useRef } from "react";
+import { usePlanetStore } from "../store/planetStore";
 
 
-type Props = {
-
-target:
-[number,number,number] | null;
-
-};
-
-
-
-export default function CameraController({
-
-target
-
-}:Props){
+export default function CameraController(){
 
 
 const controls =
@@ -23,26 +11,90 @@ useRef<CameraControls | null>(null);
 
 
 
+const targetPlanet =
+usePlanetStore(
+state=>state.targetPlanet
+);
+
+
+
+const openPanel =
+usePlanetStore(
+state=>state.openPanel
+);
+
+const exploreMode =
+usePlanetStore(
+state=>state.exploreMode
+);
+
 useEffect(()=>{
 
 
 if(
-target &&
+
+targetPlanet &&
+
 controls.current
+
 ){
 
 
 controls.current.setLookAt(
 
-target[0],
-target[1],
-target[2] + 6,
+targetPlanet.position[0],
+
+targetPlanet.position[1],
+
+targetPlanet.position[2] + 8,
 
 
-target[0],
-target[1],
-target[2],
+targetPlanet.position[0],
 
+targetPlanet.position[1],
+
+targetPlanet.position[2],
+
+
+true
+
+);
+
+
+
+
+// wait for camera movement
+
+setTimeout(()=>{
+
+openPanel();
+
+},1300);
+
+
+
+}
+
+
+},[targetPlanet]);
+
+useEffect(()=>{
+
+
+if(
+!exploreMode &&
+controls.current
+){
+
+controls.current.setLookAt(
+
+0,
+14,
+18,
+
+0,
+0,
+0,
 
 true
 
@@ -52,9 +104,7 @@ true
 }
 
 
-},[target]);
-
-
+},[exploreMode]);
 
 return (
 
@@ -68,8 +118,10 @@ maxDistance={50}
 
 minDistance={2}
 
+enabled={!exploreMode}
 />
 
 )
+
 
 }

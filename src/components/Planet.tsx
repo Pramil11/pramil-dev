@@ -34,12 +34,29 @@ export default function Planet({
 const map = useTexture(texture);
 
 
-const setPlanet =
+const setTargetPlanet =
 usePlanetStore(
-    state=>state.setPlanet
+    state=>state.setTargetPlanet
+);
+
+const selectedPlanet =
+usePlanetStore(
+    state=>state.selectedPlanet
+);
+
+const exploreMode =
+usePlanetStore(
+state=>state.exploreMode
 );
 
 
+const targetPlanet =
+usePlanetStore(
+state=>state.targetPlanet
+);
+
+const isSelected =
+selectedPlanet?.name === name;
 
 return (
 
@@ -51,15 +68,30 @@ return (
 
     <mesh
 
-    onClick={()=>{
+    visible={
+    !exploreMode ||
+    targetPlanet?.name === name
+}
 
-        setPlanet({
+        onClick={()=>{
 
-            name:name,
+            if(
+                exploreMode &&
+                targetPlanet?.name !== name
+            ){
+                return;
+            }
 
-            position:position
 
-        });
+            setTargetPlanet({
+
+                name:name,
+
+                position:position
+
+            });
+
+        usePlanetStore.getState().openPanel();
 
 
     }}
@@ -70,6 +102,7 @@ return (
         <sphereGeometry
 
         args={[
+            isSelected ? 2.7 :
             size * 1.4,
             64,
             64
@@ -86,11 +119,15 @@ return (
 
             metalness={0.05}
 
+            transparent
+
+            opacity={1}
+
             emissive="#111111"
 
             emissiveIntensity={0.2}
 
-        />
+            />
 
 
     </mesh>
@@ -100,8 +137,13 @@ return (
 
     {/* Planet glow */}
 
-    <mesh>
+    <mesh
+        visible={
+            !exploreMode ||
+            targetPlanet?.name === name
+            }
 
+            >
 
         <sphereGeometry
 
@@ -135,11 +177,17 @@ return (
     {/* Name label */}
 
     <Html
-
-    center
-
-    distanceFactor={12}
-
+        center
+        distanceFactor={12}
+        style={{
+            display:
+            isSelected ||
+            (exploreMode && targetPlanet?.name !== name)
+            ?
+            "none"
+            :
+            "block"
+        }}
     >
 
 

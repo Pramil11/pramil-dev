@@ -1,12 +1,31 @@
-import {usePlanetStore} from "../store/planetStore";
+import { usePlanetStore } from "../store/planetStore";
 
 
 export default function Sun(){
 
-    const setPlanet =
-    usePlanetStore(
-        (state)=>state.setPlanet
-    );
+
+const setTargetPlanet =
+usePlanetStore(
+state=>state.setTargetPlanet
+);
+
+
+const targetPlanet =
+usePlanetStore(
+state=>state.targetPlanet
+);
+
+
+const exploreMode =
+usePlanetStore(
+state=>state.exploreMode
+);
+
+
+
+const isSelected =
+targetPlanet?.name === "Sun";
+
 
 
 return (
@@ -16,15 +35,41 @@ return (
 
 <mesh
 
+visible={
+!exploreMode || isSelected
+}
+
+
+scale={
+isSelected ? 1.8 : 1
+}
+
+
 onClick={()=>{
 
-setPlanet({
+
+if(
+
+exploreMode &&
+
+!isSelected
+
+){
+
+return;
+
+}
+
+
+
+setTargetPlanet({
 
 name:"Sun",
 
 position:[0,0,0]
 
 });
+
 
 }}
 
@@ -42,6 +87,7 @@ args={[
 />
 
 
+
 <meshStandardMaterial
 
 color="#ffaa33"
@@ -57,7 +103,13 @@ emissiveIntensity={3}
 
 
 
+
+
 <pointLight
+
+visible={
+!exploreMode || isSelected
+}
 
 position={[0,0,0]}
 
@@ -68,6 +120,7 @@ intensity={8}
 distance={50}
 
 />
+
 
 
 </>
