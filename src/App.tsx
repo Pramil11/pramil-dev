@@ -15,6 +15,8 @@ import BottomCards from "./components/UI/BottomCards";
 import IntroSequence from "./components/UI/IntroSequence";
 import CoreInterface from "./components/UI/CoreInterface";
 import MercuryInterface from "./components/UI/MercuryInterface";
+import VenusInterface from "./components/UI/VenusInterface";
+import MarsInterface from "./components/UI/MarsInterface";
 
 function App(){
   const selectedPlanet =
@@ -130,7 +132,9 @@ radius={0.9}
 {/* ================================================= */}
 
 {selectedPlanet &&
- selectedPlanet.name !== "Mercury" && (
+ selectedPlanet.name !== "Mercury" &&
+ selectedPlanet.name !== "Venus" &&
+ selectedPlanet.name !== "Mars" && (
 <PlanetPanel />
 )}
 
@@ -190,7 +194,21 @@ radius={0.9}
 {selectedPlanet?.name === "Mercury" && (
   <MercuryInterface />
 )}
+{/* ================================================= */}
+{/* VENUS / SKILLS */}
+{/* ================================================= */}
 
+{selectedPlanet?.name === "Venus" && (
+  <VenusInterface />
+)}
+
+{/* ================================================= */
+/* MARS / EXPERIENCE */
+/* ================================================= */}
+
+{selectedPlanet?.name === "Mars" && (
+  <MarsInterface />
+)}
 
 {/* Interface */}
 
