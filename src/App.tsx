@@ -21,6 +21,10 @@ function App(){
   usePlanetStore(
   state=>state.selectedPlanet
   );
+  const closePlanet =
+  usePlanetStore(
+    state=>state.closePlanet
+  )
 return (
 
 <div
@@ -121,9 +125,51 @@ radius={0.9}
 
 <IntroSequence />
 
-<PlanetPanel/>
+<PlanetPanel />
+
 {selectedPlanet?.name === "Sun" && (
-  <CoreInterface />
+  <>
+    {/* ================================================= */}
+    {/* CLOSE SUN / RETURN TO GALAXY */}
+    {/* ================================================= */}
+
+    <button
+      onClick={closePlanet}
+      className="
+        fixed
+        left-1/2
+        top-8
+        -translate-x-1/2
+        z-[60]
+        pointer-events-auto
+        w-10
+        h-10
+        rounded-full
+        flex
+        items-center
+        justify-center
+        text-white/80
+        text-lg
+        cursor-pointer
+        transition-all
+        duration-300
+        hover:scale-110
+        hover:text-white
+      "
+      style={{
+        background: "rgba(15,15,20,0.75)",
+        border: "1px solid rgba(255,190,70,0.35)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        boxShadow:
+          "0 0 20px rgba(255,190,50,0.12)",
+      }}
+    >
+      ✕
+    </button>
+
+    <CoreInterface />
+  </>
 )}
 
 
