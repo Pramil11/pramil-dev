@@ -118,6 +118,8 @@ export default function MarsInterface() {
     (mission) => mission.id === selectedMission
   );
 
+  const SelectedIcon = selected?.icon;
+
   return (
     <div className="fixed inset-0 z-[50] pointer-events-none text-white">
 
@@ -1177,10 +1179,12 @@ export default function MarsInterface() {
                   }}
                 >
 
-                  <selected.icon
-                    size={22}
-                    className="text-[#e07b55]"
-                  />
+                  {SelectedIcon && (
+                    <SelectedIcon
+                      size={22}
+                      className="text-[#e07b55]"
+                    />
+                  )}
 
                 </div>
 

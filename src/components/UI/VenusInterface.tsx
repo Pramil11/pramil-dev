@@ -465,7 +465,7 @@ export default function VenusInterface() {
   const [selectedSkill, setSelectedSkill] =
     useState<Skill | null>(null);
 
-
+  const SelectedGroupIcon = selectedGroup?.icon;
   // ==========================================================
   // ACTIVATE / COLLAPSE SUB-SKILL NETWORK
   // ==========================================================
@@ -1450,11 +1450,12 @@ export default function VenusInterface() {
                 }}
               >
 
-                <selectedGroup.icon
-                  size={25}
-                  className="text-[#dfb184]"
-                />
-
+                {SelectedGroupIcon && (
+                    <SelectedGroupIcon
+                        size={25}
+                        className="text-[#dfb184]"
+                    />
+                    )}
               </div>
 
 
