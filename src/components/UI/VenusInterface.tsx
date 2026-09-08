@@ -1,5 +1,4 @@
 import { useState } from "react";
-import type { ElementType } from "react";
 
 import {
   Brain,
@@ -12,6 +11,7 @@ import {
   Network,
   Sparkles,
   X,
+  type LucideIcon,
 } from "lucide-react";
 
 import { usePlanetStore } from "../../store/planetStore";
@@ -36,7 +36,7 @@ type SubSkillPosition = {
 type SkillGroup = {
   id: string;
   name: string;
-  icon: ElementType;
+  icon: LucideIcon;
 
   // Position of MAIN skill
   x: number;
@@ -466,6 +466,8 @@ export default function VenusInterface() {
     useState<Skill | null>(null);
 
   const SelectedGroupIcon = selectedGroup?.icon;
+
+
   // ==========================================================
   // ACTIVATE / COLLAPSE SUB-SKILL NETWORK
   // ==========================================================
@@ -476,8 +478,6 @@ export default function VenusInterface() {
 
       const nextState = !current;
 
-      // When collapsing the network,
-      // clear selected information.
       if (!nextState) {
         setSelectedGroup(null);
         setSelectedSkill(null);
@@ -833,8 +833,6 @@ export default function VenusInterface() {
               key={`core-connection-${group.id}`}
             >
 
-              {/* Soft permanent glow */}
-
               <line
                 x1="50"
                 y1="50"
@@ -845,8 +843,6 @@ export default function VenusInterface() {
                 strokeLinecap="round"
               />
 
-
-              {/* Main permanent branch */}
 
               <line
                 x1="50"
@@ -884,8 +880,6 @@ export default function VenusInterface() {
                     key={`${group.id}-${skill.id}`}
                   >
 
-                    {/* Soft glow */}
-
                     <line
                       x1={group.x}
                       y1={group.y}
@@ -898,8 +892,6 @@ export default function VenusInterface() {
                       className="venus-branch-grow"
                     />
 
-
-                    {/* Actual branch */}
 
                     <line
                       x1={group.x}
@@ -1451,11 +1443,12 @@ export default function VenusInterface() {
               >
 
                 {SelectedGroupIcon && (
-                    <SelectedGroupIcon
-                        size={25}
-                        className="text-[#dfb184]"
-                    />
-                    )}
+                  <SelectedGroupIcon
+                    size={25}
+                    className="text-[#dfb184]"
+                  />
+                )}
+
               </div>
 
 

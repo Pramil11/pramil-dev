@@ -6,6 +6,7 @@ import {
   Compass,
   Wrench,
   Activity,
+  type LucideIcon,
 } from "lucide-react";
 
 import { usePlanetStore } from "../../store/planetStore";
@@ -15,7 +16,7 @@ type Mission = {
   title: string;
   subtitle: string;
   institution: string;
-  icon: React.ElementType;
+  icon: LucideIcon;
   description: string;
   responsibilities: string[];
   learned: string[];
@@ -305,7 +306,6 @@ export default function MarsInterface() {
             }}
           >
 
-            {/* moving power */}
             <span
               className="
                 absolute
@@ -324,7 +324,6 @@ export default function MarsInterface() {
               }}
             />
 
-            {/* secondary pulse */}
             <span
               className="
                 absolute
@@ -367,7 +366,6 @@ export default function MarsInterface() {
             }}
           >
 
-            {/* moving power */}
             <span
               className="
                 absolute
@@ -386,7 +384,6 @@ export default function MarsInterface() {
               }}
             />
 
-            {/* secondary pulse */}
             <span
               className="
                 absolute
@@ -451,6 +448,7 @@ export default function MarsInterface() {
                 />
 
               </div>
+
 
               {/* ================================================= */}
               {/* MISSION 02 → RIGHT EXPERIENCE PANEL             */}
