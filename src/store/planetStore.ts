@@ -26,6 +26,9 @@ exploreMode:boolean;
 
 setTargetPlanet:(planet:PlanetData)=>void;
 
+introFinished:boolean;
+
+setIntroFinished:(value:boolean)=>void;
 
 openPanel:()=>void;
 
@@ -54,7 +57,14 @@ targetPlanet:planet,
 exploreMode:true
 }),
 
+introFinished:false,
 
+
+setIntroFinished:(value)=>set({
+
+introFinished:value
+
+}),
 
 openPanel:()=>set((state)=>({
 

@@ -9,7 +9,10 @@ export default function CameraController(){
 const controls =
 useRef<CameraControls | null>(null);
 
-
+const introFinished =
+usePlanetStore(
+state=>state.introFinished
+);
 
 const targetPlanet =
 usePlanetStore(
@@ -27,6 +30,65 @@ const exploreMode =
 usePlanetStore(
 state=>state.exploreMode
 );
+
+useEffect(()=>{
+
+
+if(
+controls.current &&
+!introFinished
+){
+
+
+controls.current.setLookAt(
+
+0,
+2,
+8,
+
+0,
+0,
+0,
+
+true
+
+);
+
+
+}
+
+
+
+},[introFinished]);
+
+useEffect(()=>{
+
+
+if(
+introFinished &&
+controls.current
+){
+
+
+controls.current.setLookAt(
+
+0,
+14,
+18,
+
+0,
+0,
+0,
+
+true
+
+);
+
+
+}
+
+
+},[introFinished]);
 
 useEffect(()=>{
 

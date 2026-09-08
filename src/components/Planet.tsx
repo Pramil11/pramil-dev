@@ -49,6 +49,10 @@ usePlanetStore(
 state=>state.exploreMode
 );
 
+const introFinished =
+usePlanetStore(
+state=>state.introFinished
+);
 
 const targetPlanet =
 usePlanetStore(
@@ -181,6 +185,7 @@ return (
         distanceFactor={12}
         style={{
             display:
+            !introFinished ||
             isSelected ||
             (exploreMode && targetPlanet?.name !== name)
             ?
@@ -188,6 +193,8 @@ return (
             :
             "block"
         }}
+
+        
     >
 
 

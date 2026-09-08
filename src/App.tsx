@@ -8,11 +8,12 @@ import CameraController from "./components/CameraController";
 import PlanetPanel from "./components/PlanetPanel";
 import {usePlanetStore} from "./store/planetStore";
 
-import Sidebar from "./components/UI/Sidebar";
+import MissionControl from "./components/UI/MissionControl";
 import WelcomeCard from "./components/UI/WelcomeCard";
 import SystemCard from "./components/UI/SystemCard";
 import BottomCards from "./components/UI/BottomCards";
-
+import IntroSequence from "./components/UI/IntroSequence";
+import CoreInterface from "./components/UI/CoreInterface";
 
 
 function App(){
@@ -39,7 +40,7 @@ relative
 
 camera={{
 
-position:[0,14,18],
+position:[0,2,8],
 
 fov:50
 
@@ -118,8 +119,12 @@ radius={0.9}
 
 </Canvas>
 
-<PlanetPanel/>
+<IntroSequence />
 
+<PlanetPanel/>
+{selectedPlanet?.name === "Sun" && (
+  <CoreInterface />
+)}
 
 
 {/* Interface */}
@@ -127,7 +132,7 @@ radius={0.9}
 {
 !selectedPlanet && (
 <>
-<Sidebar />
+<MissionControl />
 
 <WelcomeCard />
 

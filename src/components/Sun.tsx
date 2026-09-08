@@ -41,7 +41,7 @@ visible={
 
 
 scale={
-isSelected ? 1.8 : 1
+isSelected ? 0.5 : 1
 }
 
 
@@ -79,7 +79,7 @@ position:[0,0,0]
 <sphereGeometry
 
 args={[
-1.5,
+2,
 64,
 64
 ]}
