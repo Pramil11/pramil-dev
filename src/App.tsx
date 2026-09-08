@@ -18,10 +18,7 @@ import MercuryInterface from "./components/UI/MercuryInterface";
 import VenusInterface from "./components/UI/VenusInterface";
 import MarsInterface from "./components/UI/MarsInterface";
 
-
-
 function App(){
-
 
 const selectedPlanet =
 usePlanetStore(
