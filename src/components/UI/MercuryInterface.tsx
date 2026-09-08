@@ -114,7 +114,7 @@ export default function MercuryInterface() {
   const active = milestones[activeIndex];
 
   return (
-    <div className="fixed inset-0 z-50 pointer-events-none">
+    <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
 
       {/* ================================================= */}
       {/* CLOSE */}
@@ -384,8 +384,8 @@ export default function MercuryInterface() {
           top-1/2
           -translate-x-1/2
           -translate-y-1/2
-          w-[650px]
-          h-[650px]
+          w-[min(650px,45vw)]
+          h-[min(650px,45vw)]
           pointer-events-none
         "
       >
@@ -589,14 +589,21 @@ export default function MercuryInterface() {
             (index / milestones.length) * Math.PI * 2 -
             Math.PI / 2;
 
-          const radius = 325;
+          const orbitSize = Math.min(
+            650,
+            window.innerWidth * 0.45
+          );
+
+          const center = orbitSize / 2;
+
+          const radius = center;
 
           const x =
-            325 +
+            center +
             Math.cos(angle) * radius;
 
           const y =
-            325 +
+            center +
             Math.sin(angle) * radius;
 
           const selected =
@@ -672,8 +679,8 @@ export default function MercuryInterface() {
               <div
                 className="
                   relative
-                  w-12
-                  h-12
+                  w-[clamp(2rem,4vw,3rem)]
+                  h-[clamp(2rem,4vw,3rem)]
                   rounded-full
                   flex
                   items-center
@@ -847,13 +854,13 @@ export default function MercuryInterface() {
         className="
           pointer-events-auto
           absolute
-          right-8
+          right-[clamp(1rem,3vw,2rem)]
           top-1/2
           -translate-y-1/2
-          w-[400px]
-          h-[600px]
+          w-[min(400px,28vw)]
+          h-[min(600px,70vh)]
           rounded-[24px]
-          p-7
+          p-[clamp(1rem,2vw,1.75rem)]
           text-white
           overflow-hidden
         "

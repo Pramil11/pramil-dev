@@ -1,3 +1,5 @@
+import { useThree } from "@react-three/fiber";
+
 import Sun from "./Sun";
 import Planet from "./Planet";
 
@@ -5,9 +7,26 @@ import Planet from "./Planet";
 export default function SolarSystem(){
 
 
+const { viewport } = useThree();
+
+
+// Responsive scale
+const scale =
+viewport.width < 8
+?
+0.75
+:
+viewport.width < 12
+?
+0.9
+:
+1;
+
+
+
 return (
 
-<>
+<group scale={scale}>
 
 
 {/* Sun */}
@@ -72,7 +91,7 @@ name="Mars"
 
 texture="/textures/mars.jpg"
 
-position={[-2,-5.,1]}
+position={[-2,-5,1]}
 
 size={0.6}
 
@@ -143,7 +162,7 @@ size={0.9}
 />
 
 
-</>
+</group>
 
 )
 

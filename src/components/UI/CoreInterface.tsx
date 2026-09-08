@@ -41,8 +41,8 @@ export default function CoreInterface() {
       <div
         className={`
           relative
-          w-[300px]
-          h-[300px]
+          w-[clamp(220px,18vw,300px)]
+          h-[clamp(220px,18vw,300px)]
           flex
           items-center
           justify-center
@@ -77,7 +77,7 @@ export default function CoreInterface() {
         <div
           className={`
             absolute
-            inset-[18px]
+            inset-[clamp(12px,1.2vw,18px)]
             rounded-full
             border
             border-amber-400/20
@@ -97,7 +97,7 @@ export default function CoreInterface() {
         <div
           className="
             absolute
-            inset-[38px]
+            inset-[clamp(25px,2vw,38px)]
             rounded-full
             border
             border-white/10
@@ -111,7 +111,7 @@ export default function CoreInterface() {
         <div
           className="
             absolute
-            top-[18px]
+            top-[6%]
             left-1/2
             -translate-x-1/2
             w-2
@@ -125,8 +125,8 @@ export default function CoreInterface() {
         <div
           className="
             absolute
-            bottom-[22px]
-            left-[35px]
+            bottom-[7%]
+            left-[12%]
             w-1.5
             h-1.5
             rounded-full
@@ -138,8 +138,8 @@ export default function CoreInterface() {
         <div
           className="
             absolute
-            top-[82px]
-            right-[15px]
+            top-[27%]
+            right-[5%]
             w-1.5
             h-1.5
             rounded-full
@@ -159,8 +159,8 @@ export default function CoreInterface() {
             className="
               pointer-events-auto
               relative
-              w-[150px]
-              h-[150px]
+              w-[clamp(110px,9vw,150px)]
+              h-[clamp(110px,9vw,150px)]
               rounded-full
               flex
               flex-col
@@ -187,8 +187,8 @@ export default function CoreInterface() {
             <div
               className="
                 text-amber-300
-                text-2xl
-                mb-1
+                text-[clamp(1.25rem,1.6vw,1.5rem)]
+                mb-[clamp(0.2rem,0.3vw,0.25rem)]
               "
             >
               ✦
@@ -196,7 +196,7 @@ export default function CoreInterface() {
 
             <div
               className="
-                text-[11px]
+                text-[clamp(9px,0.65vw,11px)]
                 tracking-[0.28em]
                 text-amber-300
                 font-semibold
@@ -207,7 +207,7 @@ export default function CoreInterface() {
 
             <div
               className="
-                text-[9px]
+                text-[clamp(7px,0.55vw,9px)]
                 tracking-[0.32em]
                 text-white/50
                 mt-1
@@ -218,8 +218,8 @@ export default function CoreInterface() {
 
             <div
               className="
-                mt-3
-                text-[8px]
+                mt-[clamp(0.5rem,0.8vw,0.75rem)]
+                text-[clamp(6px,0.5vw,8px)]
                 tracking-[0.2em]
                 uppercase
                 text-white/40
@@ -243,8 +243,8 @@ export default function CoreInterface() {
             className="
               pointer-events-auto
               relative
-              w-[190px]
-              h-[190px]
+              w-[clamp(140px,11vw,190px)]
+              h-[clamp(140px,11vw,190px)]
               rounded-full
               flex
               flex-col
@@ -268,13 +268,13 @@ export default function CoreInterface() {
             }}
           >
 
-            <div className="text-amber-300 text-2xl mb-2">
+            <div className="text-amber-300 text-[clamp(1.25rem,1.6vw,1.5rem)] mb-[clamp(0.35rem,0.5vw,0.5rem)]">
               ✦
             </div>
 
             <div
               className="
-                text-[10px]
+                text-[clamp(8px,0.6vw,10px)]
                 tracking-[0.28em]
                 text-amber-300
                 font-semibold
@@ -285,7 +285,7 @@ export default function CoreInterface() {
 
             <div
               className="
-                text-[8px]
+                text-[clamp(6px,0.5vw,8px)]
                 tracking-[0.35em]
                 text-white/40
                 mt-1
@@ -303,16 +303,16 @@ export default function CoreInterface() {
               }}
               className="
                 absolute
-                -top-5
+                -top-[clamp(15px,1.4vw,20px)]
                 left-1/2
                 -translate-x-1/2
-                w-12
-                h-12
+                w-[clamp(40px,3vw,48px)]
+                h-[clamp(40px,3vw,48px)]
                 rounded-full
                 bg-black/80
                 border
                 border-amber-300/30
-                text-[8px]
+                text-[clamp(6px,0.5vw,8px)]
                 text-amber-300
                 hover:bg-amber-300/10
                 transition
@@ -330,16 +330,16 @@ export default function CoreInterface() {
               }}
               className="
                 absolute
-                -bottom-5
+                -bottom-[clamp(15px,1.4vw,20px)]
                 left-1/2
                 -translate-x-1/2
-                w-12
-                h-12
+                w-[clamp(40px,3vw,48px)]
+                h-[clamp(40px,3vw,48px)]
                 rounded-full
                 bg-black/80
                 border
                 border-cyan-300/30
-                text-[7px]
+                text-[clamp(6px,0.45vw,7px)]
                 text-cyan-300
                 hover:bg-cyan-300/10
                 transition
@@ -357,16 +357,16 @@ export default function CoreInterface() {
               }}
               className="
                 absolute
-                left-[-18px]
+                left-[clamp(-18px,-1.1vw,-10px)]
                 top-1/2
                 -translate-y-1/2
-                w-12
-                h-12
+                w-[clamp(40px,3vw,48px)]
+                h-[clamp(40px,3vw,48px)]
                 rounded-full
                 bg-black/80
                 border
                 border-purple-300/30
-                text-[7px]
+                text-[clamp(6px,0.45vw,7px)]
                 text-purple-300
                 hover:bg-purple-300/10
                 transition
@@ -384,16 +384,16 @@ export default function CoreInterface() {
               }}
               className="
                 absolute
-                right-[-18px]
+                right-[clamp(-18px,-1.1vw,-10px)]
                 top-1/2
                 -translate-y-1/2
-                w-12
-                h-12
+                w-[clamp(40px,3vw,48px)]
+                h-[clamp(40px,3vw,48px)]
                 rounded-full
                 bg-black/80
                 border
                 border-emerald-300/30
-                text-[7px]
+                text-[clamp(6px,0.45vw,7px)]
                 text-emerald-300
                 hover:bg-emerald-300/10
                 transition
@@ -416,10 +416,10 @@ export default function CoreInterface() {
             className="
               pointer-events-auto
               relative
-              w-[240px]
-              min-h-[190px]
+              w-[min(240px,88vw)]
+              min-h-[clamp(140px,11vw,190px)]
               rounded-3xl
-              p-5
+              p-[clamp(1rem,1.2vw,1.25rem)]
               text-white
             "
             style={{
@@ -439,20 +439,20 @@ export default function CoreInterface() {
 
             {section === "about" && (
                 <>
-                    <div className="text-[8px] tracking-[0.3em] text-amber-300">
+                    <div className="text-[clamp(6px,0.5vw,8px)] tracking-[0.3em] text-amber-300">
                     CORE / MY WAY
                     </div>
 
-                    <h2 className="mt-3 text-lg font-semibold">
+                    <h2 className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(1rem,1.15vw,1.125rem)] font-semibold">
                     Keep Moving Forward
                     </h2>
 
-                    <p className="mt-3 text-xs leading-5 text-white/60">
+                    <p className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(0.7rem,0.78vw,0.75rem)] leading-5 text-white/60">
                     My way of living is simple: try, learn, try again,
                     and keep moving forward.
                     </p>
 
-                    <p className="mt-3 text-xs leading-5 text-white/50">
+                    <p className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(0.7rem,0.78vw,0.75rem)] leading-5 text-white/50">
                     Not everything works the first time. I believe in
                     working hard, learning from mistakes, and continuing
                     even when the path becomes difficult.
@@ -460,19 +460,19 @@ export default function CoreInterface() {
 
                     <div
                     className="
-                        mt-4
+                        mt-[clamp(0.75rem,1vw,1rem)]
                         rounded-xl
                         border
                         border-amber-300/10
                         bg-amber-300/5
-                        p-3
+                        p-[clamp(0.6rem,0.8vw,0.75rem)]
                     "
                     >
-                    <div className="text-[9px] text-amber-300">
+                    <div className="text-[clamp(7px,0.55vw,9px)] text-amber-300">
                         MY WAY
                     </div>
 
-                    <div className="mt-2 text-xs text-white/70">
+                    <div className="mt-2 text-[clamp(0.7rem,0.78vw,0.75rem)] text-white/70">
                         Try again.
                         <br />
                         Keep moving.
@@ -487,61 +487,61 @@ export default function CoreInterface() {
 
             {section === "building" && (
                 <>
-                    <div className="text-[8px] tracking-[0.3em] text-cyan-300">
+                    <div className="text-[clamp(6px,0.5vw,8px)] tracking-[0.3em] text-cyan-300">
                     CORE / FAVOURITES
                     </div>
 
-                    <h2 className="mt-3 text-lg font-semibold">
+                    <h2 className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(1rem,1.15vw,1.125rem)] font-semibold">
                     A Few of My Favourites
                     </h2>
 
-                    <p className="mt-3 text-xs leading-5 text-white/60">
+                    <p className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(0.7rem,0.78vw,0.75rem)] leading-5 text-white/60">
                     A few things that can easily pull me away from
                     the screen and into my own world.
                     </p>
 
-                    <div className="mt-4 space-y-2">
+                    <div className="mt-[clamp(0.75rem,1vw,1rem)] space-y-2">
 
-                    <div className="rounded-xl border border-cyan-300/10 bg-cyan-300/5 p-3">
-                        <div className="text-lg">
+                    <div className="rounded-xl border border-cyan-300/10 bg-cyan-300/5 p-[clamp(0.6rem,0.8vw,0.75rem)]">
+                        <div className="text-[clamp(1rem,1.15vw,1.125rem)]">
                         🥟
                         </div>
 
-                        <div className="mt-1 text-[10px] text-cyan-300">
+                        <div className="mt-1 text-[clamp(8px,0.6vw,10px)] text-cyan-300">
                         FAVORITE FOOD
                         </div>
 
-                        <div className="mt-1 text-sm text-white/80">
+                        <div className="mt-1 text-[clamp(0.78rem,0.9vw,0.875rem)] text-white/80">
                         Momo
                         </div>
                     </div>
 
 
-                    <div className="rounded-xl border border-cyan-300/10 bg-cyan-300/5 p-3">
-                        <div className="text-lg">
+                    <div className="rounded-xl border border-cyan-300/10 bg-cyan-300/5 p-[clamp(0.6rem,0.8vw,0.75rem)]">
+                        <div className="text-[clamp(1rem,1.15vw,1.125rem)]">
                         ⚔️
                         </div>
 
-                        <div className="mt-1 text-[10px] text-cyan-300">
+                        <div className="mt-1 text-[clamp(8px,0.6vw,10px)] text-cyan-300">
                         FAVORITE ANIME
                         </div>
 
-                        <div className="mt-1 text-sm text-white/80">
+                        <div className="mt-1 text-[clamp(0.78rem,0.9vw,0.875rem)] text-white/80">
                         Attack on Titan
                         </div>
                     </div>
 
 
-                    <div className="rounded-xl border border-cyan-300/10 bg-cyan-300/5 p-3">
-                        <div className="text-lg">
+                    <div className="rounded-xl border border-cyan-300/10 bg-cyan-300/5 p-[clamp(0.6rem,0.8vw,0.75rem)]">
+                        <div className="text-[clamp(1rem,1.15vw,1.125rem)]">
                         🏏
                         </div>
 
-                        <div className="mt-1 text-[10px] text-cyan-300">
+                        <div className="mt-1 text-[clamp(8px,0.6vw,10px)] text-cyan-300">
                         FAVORITE SPORT
                         </div>
 
-                        <div className="mt-1 text-sm text-white/80">
+                        <div className="mt-1 text-[clamp(0.78rem,0.9vw,0.875rem)] text-white/80">
                         Cricket
                         </div>
                     </div>
@@ -554,56 +554,56 @@ export default function CoreInterface() {
 
             {section === "interests" && (
                 <>
-                    <div className="text-[8px] tracking-[0.3em] text-purple-300">
+                    <div className="text-[clamp(6px,0.5vw,8px)] tracking-[0.3em] text-purple-300">
                     CORE / VALUES
                     </div>
 
-                    <h2 className="mt-3 text-lg font-semibold">
+                    <h2 className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(1rem,1.15vw,1.125rem)] font-semibold">
                     What I Believe
                     </h2>
 
-                    <p className="mt-3 text-xs leading-5 text-white/60">
+                    <p className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(0.7rem,0.78vw,0.75rem)] leading-5 text-white/60">
                     A few principles that shape how I see people,
                     learning, work, and the world around me.
                     </p>
 
-                    <div className="mt-4 space-y-2">
+                    <div className="mt-[clamp(0.75rem,1vw,1rem)] space-y-2">
 
-                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-2.5">
-                        <div className="text-[10px] text-purple-300 font-semibold">
+                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-[clamp(0.5rem,0.7vw,0.625rem)]">
+                        <div className="text-[clamp(8px,0.6vw,10px)] text-purple-300 font-semibold">
                         UNITY
                         </div>
-                        <div className="mt-1 text-[9px] text-white/50">
+                        <div className="mt-1 text-[clamp(7px,0.55vw,9px)] text-white/50">
                         Different people and ideas can become stronger
                         when they come together.
                         </div>
                     </div>
 
-                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-2.5">
-                        <div className="text-[10px] text-purple-300 font-semibold">
+                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-[clamp(0.5rem,0.7vw,0.625rem)]">
+                        <div className="text-[clamp(8px,0.6vw,10px)] text-purple-300 font-semibold">
                         SIMPLICITY
                         </div>
-                        <div className="mt-1 text-[9px] text-white/50">
+                        <div className="mt-1 text-[clamp(7px,0.55vw,9px)] text-white/50">
                         Keep things clear, understand the basics,
                         and avoid unnecessary complexity.
                         </div>
                     </div>
 
-                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-2.5">
-                        <div className="text-[10px] text-purple-300 font-semibold">
+                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-[clamp(0.5rem,0.7vw,0.625rem)]">
+                        <div className="text-[clamp(8px,0.6vw,10px)] text-purple-300 font-semibold">
                         PATIENCE
                         </div>
-                        <div className="mt-1 text-[9px] text-white/50">
+                        <div className="mt-1 text-[clamp(7px,0.55vw,9px)] text-white/50">
                         Good things take time. Keep learning and
                         trust the process.
                         </div>
                     </div>
 
-                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-2.5">
-                        <div className="text-[10px] text-purple-300 font-semibold">
+                    <div className="rounded-lg border border-purple-300/10 bg-purple-300/5 p-[clamp(0.5rem,0.7vw,0.625rem)]">
+                        <div className="text-[clamp(8px,0.6vw,10px)] text-purple-300 font-semibold">
                         HARMONY WITH NATURE
                         </div>
-                        <div className="mt-1 text-[9px] text-white/50">
+                        <div className="mt-1 text-[clamp(7px,0.55vw,9px)] text-white/50">
                         Progress should exist alongside nature,
                         not against it.
                         </div>
@@ -617,34 +617,34 @@ export default function CoreInterface() {
 
             {section === "fun" && (
                 <>
-                    <div className="text-[8px] tracking-[0.3em] text-emerald-300">
+                    <div className="text-[clamp(6px,0.5vw,8px)] tracking-[0.3em] text-emerald-300">
                     CORE / FUN FACT
                     </div>
 
-                    <h2 className="mt-3 text-lg font-semibold">
+                    <h2 className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(1rem,1.15vw,1.125rem)] font-semibold">
                     One Episode Is Never One Episode
                     </h2>
 
-                    <p className="mt-3 text-xs leading-5 text-white/60">
+                    <p className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(0.7rem,0.78vw,0.75rem)] leading-5 text-white/60">
                     If I start watching a new anime and really get into
                     it, stopping halfway is not really an option.
                     </p>
 
                     <div
                     className="
-                        mt-4
+                        mt-[clamp(0.75rem,1vw,1rem)]
                         rounded-xl
                         border
                         border-emerald-300/10
                         bg-emerald-300/5
-                        p-3
+                        p-[clamp(0.6rem,0.8vw,0.75rem)]
                     "
                     >
-                    <div className="text-[9px] text-emerald-300">
+                    <div className="text-[clamp(7px,0.55vw,9px)] text-emerald-300">
                         FUN FACT
                     </div>
 
-                    <div className="mt-2 text-xs leading-5 text-white/70">
+                    <div className="mt-2 text-[clamp(0.7rem,0.78vw,0.75rem)] leading-5 text-white/70">
                         I will keep watching until I finish it.
                         <br />
                         One more episode?
@@ -653,7 +653,7 @@ export default function CoreInterface() {
                     </div>
                     </div>
 
-                    <div className="mt-3 text-[9px] text-white/35">
+                    <div className="mt-[clamp(0.5rem,0.8vw,0.75rem)] text-[clamp(7px,0.55vw,9px)] text-white/35">
                     JUST ONE MORE EPISODE... ✦
                     </div>
                 </>
@@ -664,8 +664,8 @@ export default function CoreInterface() {
             <button
               onClick={() => setSection(null)}
               className="
-                mt-5
-                text-[9px]
+                mt-[clamp(1rem,1.3vw,1.25rem)]
+                text-[clamp(7px,0.55vw,9px)]
                 tracking-[0.15em]
                 text-amber-300/70
                 hover:text-amber-300
@@ -690,7 +690,7 @@ export default function CoreInterface() {
         <div
           className="
             absolute
-            top-[calc(100%+10px)]
+            top-[calc(100%+clamp(6px,0.7vw,10px))]
             left-1/2
             -translate-x-1/2
             text-center
@@ -700,7 +700,7 @@ export default function CoreInterface() {
 
           <div
             className="
-              text-[9px]
+              text-[clamp(7px,0.55vw,9px)]
               tracking-[0.35em]
               uppercase
               text-white/40
@@ -712,7 +712,7 @@ export default function CoreInterface() {
           <div
             className="
               mt-1
-              text-[10px]
+              text-[clamp(8px,0.6vw,10px)]
               tracking-[0.2em]
               text-amber-300/70
             "

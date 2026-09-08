@@ -256,8 +256,8 @@ export default function MarsInterface() {
             top-1/2
             -translate-x-1/2
             -translate-y-1/2
-            w-[520px]
-            h-[520px]
+            w-[clamp(280px,35vw,520px)]
+            h-[clamp(280px,35vw,520px)]
             rounded-full
             transition-all
             duration-[2500ms]
@@ -292,7 +292,7 @@ export default function MarsInterface() {
               absolute
               left-1/2
               top-1/2
-              w-[250px]
+              w-[clamp(120px,18vw,250px)]
               h-[2px]
               -translate-x-full
               -translate-y-1/2
@@ -327,7 +327,7 @@ export default function MarsInterface() {
             <span
               className="
                 absolute
-                right-[20px]
+                right-[clamp(10px,1.5vw,20px)]
                 top-1/2
                 -translate-y-1/2
                 w-1.5
@@ -354,7 +354,7 @@ export default function MarsInterface() {
               absolute
               left-1/2
               top-1/2
-              w-[250px]
+              w-[clamp(120px,18vw,250px)]
               h-[2px]
               -translate-y-1/2
             "
@@ -387,7 +387,7 @@ export default function MarsInterface() {
             <span
               className="
                 absolute
-                left-[20px]
+                left-[clamp(10px,1.5vw,20px)]
                 top-1/2
                 -translate-y-1/2
                 w-1.5
@@ -415,7 +415,7 @@ export default function MarsInterface() {
               <div
                 className="
                   absolute
-                  left-[440px]
+                  left-[clamp(80px,25vw,440px)]
                   top-1/2
                   -translate-y-1/2
                   w-[65px]
@@ -457,7 +457,7 @@ export default function MarsInterface() {
               <div
                 className="
                   absolute
-                  right-[440px]
+                  right-[clamp(80px,25vw,440px)]
                   top-1/2
                   -translate-y-1/2
                   w-[65px]
@@ -534,7 +534,7 @@ export default function MarsInterface() {
         className="
           fixed
           left-1/2
-          top-7
+          top-[clamp(1rem,2vw,1.75rem)]
           -translate-x-1/2
           z-[80]
           pointer-events-auto
@@ -572,7 +572,7 @@ export default function MarsInterface() {
           top-30
           left-1/2
           -translate-x-1/2
-          w-[300px]
+          w-[min(300px,85vw)]
           pointer-events-auto
         "
       >
@@ -636,8 +636,8 @@ export default function MarsInterface() {
           left-5
           top-1/2
           -translate-y-1/2
-          w-[420px]
-          h-[800px]
+          w-[min(420px,90vw)]
+          h-[min(800px,75vh)]
           overflow-hidden
           pointer-events-auto
           transition-all
@@ -672,8 +672,8 @@ export default function MarsInterface() {
           right-5
           top-1/2
           -translate-y-1/2
-          w-[420px]
-          h-[800px]
+          w-[min(420px,90vw)]
+          h-[min(800px,75vh)]
           overflow-hidden
           pointer-events-auto
           transition-all
@@ -730,8 +730,8 @@ export default function MarsInterface() {
             duration-[1500ms]
             ${
               powering || activated
-                ? "w-[300px] h-[300px] opacity-100"
-                : "w-[250px] h-[250px] opacity-30"
+                ? "w-[min(300px,85vw)] h-[300px] opacity-100"
+                : "w-[clamp(120px,18vw,250px)] h-[250px] opacity-30"
             }
           `}
           style={{
@@ -752,10 +752,10 @@ export default function MarsInterface() {
             duration-[1800ms]
             ${
               powering
-                ? "w-[390px] h-[390px] opacity-80"
+                ? "w-[clamp(280px,30vw,390px)] h-[clamp(280px,30vw,390px)] opacity-80"
                 : activated
-                ? "w-[430px] h-[430px] opacity-30"
-                : "w-[300px] h-[300px] opacity-10"
+                ? "w-[clamp(320px,33vw,430px)] h-[clamp(320px,33vw,430px)] opacity-30"
+                : "w-[min(300px,85vw)] h-[300px] opacity-10"
             }
           `}
           style={{
@@ -776,7 +776,7 @@ export default function MarsInterface() {
             className={`
               absolute
               left-1/2
-              top-[-145px]
+              top-[clamp(-120px,-10vw,-145px)]
               -translate-x-1/2
               w-px
               h-[145px]
@@ -799,10 +799,10 @@ export default function MarsInterface() {
           <div
             className={`
               absolute
-              right-[105px]
+              right-[clamp(60px,8vw,105px)]
               top-1/2
               -translate-y-1/2
-              w-[125px]
+              w-[clamp(60px,8vw,125px)]
               h-px
               transition-all
               duration-1000
@@ -823,10 +823,10 @@ export default function MarsInterface() {
           <div
             className={`
               absolute
-              left-[105px]
+              left-[clamp(60px,8vw,105px)]
               top-1/2
               -translate-y-1/2
-              w-[125px]
+              w-[clamp(60px,8vw,125px)]
               h-px
               transition-all
               duration-1000
@@ -848,7 +848,7 @@ export default function MarsInterface() {
             className={`
               absolute
               left-1/2
-              bottom-[-145px]
+              bottom-[clamp(-120px,-10vw,-145px)]
               -translate-x-1/2
               w-px
               h-[145px]
@@ -878,8 +878,8 @@ export default function MarsInterface() {
           disabled={activated || powering}
           className={`
             relative
-            w-[190px]
-            h-[190px]
+            w-[clamp(130px,12vw,190px)]
+            h-[clamp(130px,12vw,190px)]
             rounded-full
             pointer-events-auto
             flex
@@ -1034,7 +1034,7 @@ export default function MarsInterface() {
           bottom-30
           left-1/2
           -translate-x-1/2
-          w-[360px]
+          w-[min(360px,85vw)]
           pointer-events-auto
         "
       >
@@ -1137,11 +1137,11 @@ export default function MarsInterface() {
 
           <div
             className="
-              w-[540px]
+              w-[min(540px,90vw)]
               max-h-[80vh]
               overflow-y-auto
               rounded-3xl
-              p-7
+              p-[clamp(1rem,2vw,1.75rem)]
             "
             onClick={(event) =>
               event.stopPropagation()
@@ -1199,7 +1199,7 @@ export default function MarsInterface() {
                     Mars Field Mission
                   </div>
 
-                  <h2 className="text-3xl font-semibold mt-1">
+                  <h2 className="text-[clamp(1.5rem,3vw,1.875rem)] font-semibold mt-1">
                     {selected.title}
                   </h2>
 
@@ -1428,7 +1428,7 @@ function MissionNode({
         absolute
         top-1/2
         -translate-y-1/2
-        w-[230px]
+        w-[min(230px,70vw)]
         px-4
         py-4
         rounded-2xl
@@ -1438,8 +1438,8 @@ function MissionNode({
         duration-[1000ms]
         ${
           isLeft
-            ? "right-[250px]"
-            : "left-[250px]"
+            ? "right-[clamp(80px,15vw,250px)]"
+            : "left-[clamp(80px,15vw,250px)]"
         }
         ${
           activated
@@ -1628,7 +1628,7 @@ function ExperiencePanel({
     <div
       className="
         rounded-3xl
-        p-7
+        p-[clamp(1rem,2vw,1.75rem)]
         backdrop-blur-xl
         h-full
       "
@@ -1691,7 +1691,7 @@ function ExperiencePanel({
 
         <div>
 
-          <div className="text-2xl font-semibold leading-tight">
+          <div className="text-[clamp(1.2rem,2vw,1.5rem)] font-semibold leading-tight">
             {title}
           </div>
 

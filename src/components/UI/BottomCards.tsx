@@ -1,75 +1,83 @@
-export default function BottomCards() {
-  return (
-    <div
-      className="
-        absolute
-        bottom-8
-        left-[365px]
-        right-8
+export default function BottomCards() { 
+  return ( 
+
+    <div 
+      className=" 
+        absolute 
+
+        bottom-[2vh]
+
+        left-[min(365px,25vw)]
+
+        right-[2vw]
+
         flex
-        gap-6
-      "
-    >
 
-      {/* NOW PLAYING */}
-      <div
-        className="
-          flex-1
-          relative
-          overflow-hidden
+        gap-[clamp(0.75rem,1.5vw,1.5rem)]
 
-          bg-gradient-to-br
-          from-[#0b172c]/90
-          via-[#081222]/85
-          to-[#120d25]/90
+        max-md:flex-col
 
-          backdrop-blur-xl
+      " 
+    > 
+ 
+      {/* NOW PLAYING */} 
+      <div 
+        className=" 
+          flex-1 
+          relative 
+          overflow-hidden 
+ 
+          bg-gradient-to-br 
+          from-[#0b172c]/90 
+          via-[#081222]/85 
+          to-[#120d25]/90 
+ 
+          backdrop-blur-xl 
+ 
+          border 
+          border-cyan-400/20 
+ 
+          rounded-2xl 
+ 
+          p-[clamp(1rem,1.3vw,1.5rem)]
 
-          border
-          border-cyan-400/20
-
-          rounded-2xl
-
-          p-6
-
-          text-white
-
-          shadow-[0_15px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(56,189,248,0.05)]
-
-          transition-all
-          duration-300
-
-          hover:border-cyan-400/45
-          hover:-translate-y-1
-          hover:shadow-[0_20px_45px_rgba(0,0,0,0.5),0_0_30px_rgba(56,189,248,0.1)]
-        "
-      >
-
-        {/* Top accent */}
-        <div
+          text-white 
+ 
+          shadow-[0_15px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(56,189,248,0.05)] 
+ 
+          transition-all 
+          duration-300 
+ 
+          hover:border-cyan-400/45 
+          hover:-translate-y-1 
+          hover:shadow-[0_20px_45px_rgba(0,0,0,0.5),0_0_30px_rgba(56,189,248,0.1)] 
+        " 
+      > 
+ 
+        <div 
           className="
-            absolute
-            top-0
-            left-6
-            right-6
+            absolute 
+            top-0 
+            left-6 
+            right-6 
             h-[2px]
-            bg-gradient-to-r
-            from-transparent
-            via-cyan-400
-            to-transparent
-            opacity-60
-          "
-        />
-
-        <div
+            bg-gradient-to-r 
+            from-transparent 
+            via-cyan-400 
+            to-transparent 
+            opacity-60 
+          " 
+        /> 
+ 
+        <div 
           className="
-            flex
-            items-center
+            flex 
+            items-center 
             gap-2
-          "
-        >
-
-          <span
+          " 
+        > 
+ 
+          <span 
             className="
               w-2
               h-2
@@ -77,11 +85,11 @@ export default function BottomCards() {
               bg-cyan-400
               shadow-[0_0_10px_rgba(34,211,238,0.9)]
             "
-          />
-
-          <h3
+          /> 
+ 
+          <h3 
             className="
-              text-[10px]
+              text-[clamp(8px,0.6vw,10px)]
               tracking-[0.25em]
               uppercase
               text-cyan-300/60
@@ -93,9 +101,9 @@ export default function BottomCards() {
         </div>
 
 
-        <p
+        <p 
           className="
-            text-xl
+            text-[clamp(1rem,1.3vw,1.25rem)]
             mt-3
             font-medium
             tracking-wide
@@ -106,7 +114,7 @@ export default function BottomCards() {
         </p>
 
 
-        <div
+        <div 
           className="
             mt-4
             flex
@@ -116,20 +124,21 @@ export default function BottomCards() {
           "
         >
 
-          <span className="w-1 h-3 bg-cyan-400 rounded-full" />
-          <span className="w-1 h-5 bg-cyan-400 rounded-full" />
-          <span className="w-1 h-2 bg-cyan-400 rounded-full" />
-          <span className="w-1 h-4 bg-cyan-400 rounded-full" />
-          <span className="w-1 h-6 bg-cyan-400 rounded-full" />
-          <span className="w-1 h-3 bg-cyan-400 rounded-full" />
+          <span className="w-1 h-3 bg-cyan-400 rounded-full" /> 
+          <span className="w-1 h-5 bg-cyan-400 rounded-full" /> 
+          <span className="w-1 h-2 bg-cyan-400 rounded-full" /> 
+          <span className="w-1 h-4 bg-cyan-400 rounded-full" /> 
+          <span className="w-1 h-6 bg-cyan-400 rounded-full" /> 
+          <span className="w-1 h-3 bg-cyan-400 rounded-full" /> 
 
         </div>
 
       </div>
 
 
-      {/* ACTIVE MISSION */}
-      <div
+      {/* ACTIVE MISSION */} 
+
+      <div 
         className="
           flex-1
           relative
@@ -147,7 +156,7 @@ export default function BottomCards() {
 
           rounded-2xl
 
-          p-6
+          p-[clamp(1rem,1.3vw,1.5rem)]
 
           text-white
 
@@ -162,8 +171,7 @@ export default function BottomCards() {
         "
       >
 
-        {/* Top accent */}
-        <div
+        <div 
           className="
             absolute
             top-0
@@ -178,13 +186,7 @@ export default function BottomCards() {
           "
         />
 
-        <div
-          className="
-            flex
-            items-center
-            gap-2
-          "
-        >
+        <div className="flex items-center gap-2">
 
           <span
             className="
@@ -198,7 +200,7 @@ export default function BottomCards() {
 
           <h3
             className="
-              text-[10px]
+              text-[clamp(8px,0.6vw,10px)]
               tracking-[0.25em]
               uppercase
               text-purple-300/60
@@ -212,7 +214,7 @@ export default function BottomCards() {
 
         <p
           className="
-            text-xl
+            text-[clamp(1rem,1.3vw,1.25rem)]
             mt-3
             font-medium
             tracking-wide
@@ -250,7 +252,9 @@ export default function BottomCards() {
 
 
       {/* SYSTEM STATUS */}
-      <div
+
+
+      <div 
         className="
           flex-1
           relative
@@ -268,7 +272,7 @@ export default function BottomCards() {
 
           rounded-2xl
 
-          p-6
+          p-[clamp(1rem,1.3vw,1.5rem)]
 
           text-white
 
@@ -283,7 +287,6 @@ export default function BottomCards() {
         "
       >
 
-        {/* Top accent */}
         <div
           className="
             absolute
@@ -299,13 +302,8 @@ export default function BottomCards() {
           "
         />
 
-        <div
-          className="
-            flex
-            items-center
-            gap-2
-          "
-        >
+
+        <div className="flex items-center gap-2">
 
           <span
             className="
@@ -317,9 +315,10 @@ export default function BottomCards() {
             "
           />
 
+
           <h3
             className="
-              text-[10px]
+              text-[clamp(8px,0.6vw,10px)]
               tracking-[0.25em]
               uppercase
               text-emerald-300/60
@@ -328,12 +327,13 @@ export default function BottomCards() {
             System Status
           </h3>
 
+
         </div>
 
 
         <p
           className="
-            text-xl
+            text-[clamp(1rem,1.3vw,1.25rem)]
             mt-3
             font-medium
             tracking-wide
@@ -344,51 +344,9 @@ export default function BottomCards() {
         </p>
 
 
-        {/* Progress */}
-        <div
-          className="
-            mt-4
-            flex
-            items-center
-            gap-2
-          "
-        >
-
-          <div
-            className="
-              flex-1
-              h-1
-              rounded-full
-              bg-white/5
-              overflow-hidden
-            "
-          >
-
-            <div
-              className="
-                h-full
-                w-full
-                bg-emerald-400/70
-                shadow-[0_0_8px_rgba(52,211,153,0.6)]
-              "
-            />
-
-          </div>
-
-          <span
-            className="
-              text-[9px]
-              text-emerald-400/70
-              tracking-wider
-            "
-          >
-            100%
-          </span>
-
-        </div>
-
       </div>
 
     </div>
-  );
+
+  ); 
 }

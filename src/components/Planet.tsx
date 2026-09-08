@@ -59,8 +59,11 @@ usePlanetStore(
 state=>state.targetPlanet
 );
 
+
 const isSelected =
 selectedPlanet?.name === name;
+
+
 
 return (
 
@@ -94,6 +97,7 @@ return (
                 position:position
 
             });
+
 
         usePlanetStore.getState().openPanel();
 
@@ -142,12 +146,13 @@ return (
     {/* Planet glow */}
 
     <mesh
+
         visible={
             !exploreMode ||
             targetPlanet?.name === name
             }
 
-            >
+    >
 
         <sphereGeometry
 
@@ -172,7 +177,6 @@ return (
 
         />
 
-
     </mesh>
 
 
@@ -181,17 +185,31 @@ return (
     {/* Name label */}
 
     <Html
+
         center
-        distanceFactor={12}
+
+        distanceFactor={
+            window.innerWidth < 768 ? 16 : 12
+        }
+
         style={{
+
             display:
+
             !introFinished ||
+
             isSelected ||
+
             (exploreMode && targetPlanet?.name !== name)
+
             ?
+
             "none"
+
             :
+
             "block"
+
         }}
 
         
@@ -202,19 +220,35 @@ return (
 
         style={{
 
+
             color:"white",
+
 
             background:"rgba(0,0,0,0.55)",
 
-            padding:"5px 12px",
+
+            padding:
+            "clamp(3px,0.5vw,5px) clamp(8px,1vw,12px)",
+
 
             borderRadius:"12px",
 
-            fontSize:"14px",
 
-            border:"1px solid rgba(255,255,255,0.2)",
+            fontSize:
+            "clamp(10px,1vw,14px)",
 
-            backdropFilter:"blur(8px)"
+
+            border:
+            "1px solid rgba(255,255,255,0.2)",
+
+
+            backdropFilter:
+            "blur(8px)",
+
+
+            whiteSpace:
+            "nowrap"
+
 
         }}
 

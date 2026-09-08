@@ -1,3 +1,4 @@
+import { useThree } from "@react-three/fiber";
 import { usePlanetStore } from "../store/planetStore";
 
 
@@ -23,6 +24,32 @@ state=>state.exploreMode
 
 
 
+const { viewport } = useThree();
+
+
+
+const responsiveScale =
+
+viewport.width < 8
+
+?
+
+0.75
+
+:
+
+viewport.width < 14
+
+?
+
+0.9
+
+:
+
+1;
+
+
+
 const isSelected =
 targetPlanet?.name === "Sun";
 
@@ -41,7 +68,11 @@ visible={
 
 
 scale={
-isSelected ? 0.5 : 1
+isSelected
+?
+0.5
+:
+responsiveScale
 }
 
 
@@ -73,6 +104,7 @@ position:[0,0,0]
 
 }}
 
+
 >
 
 
@@ -99,7 +131,9 @@ emissiveIntensity={3}
 />
 
 
+
 </mesh>
+
 
 
 

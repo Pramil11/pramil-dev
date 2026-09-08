@@ -25,7 +25,7 @@ export default function PlanetPanel() {
 
   if (planet.name === "Sun") {
     return (
-      <div className="fixed inset-0 z-50 pointer-events-none">
+      <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
 
         {/* ================================================= */}
         {/* TOP LEFT - ABOUT ME */}
@@ -35,12 +35,12 @@ export default function PlanetPanel() {
           className="
             pointer-events-auto
             absolute
-            left-8
-            top-8
-            w-[500px]
-            h-[400px]
+            left-[clamp(1rem,3vw,2rem)]
+            top-[clamp(1rem,3vh,2rem)]
+            w-[min(500px,40vw)]
+            h-[min(400px,45vh)]
             rounded-[24px]
-            p-6
+            p-[clamp(1rem,2vw,1.5rem)]
             text-white
           "
           style={{
@@ -91,7 +91,7 @@ export default function PlanetPanel() {
 
           <div className="mt-5">
 
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-[clamp(1.5rem,3vw,1.875rem)] font-bold">
               Pramil Shrestha
             </h1>
 
@@ -184,12 +184,12 @@ export default function PlanetPanel() {
         className="
             pointer-events-auto
             absolute
-            right-8
-            top-8
-            w-[500px]
-            h-[400px]
+            right-[clamp(1rem,3vw,2rem)]
+            top-[clamp(1rem,3vh,2rem)]
+            w-[min(500px,40vw)]
+            h-[min(400px,45vh)]
             rounded-[24px]
-            p-6
+            p-[clamp(1rem,2vw,1.5rem)]
             text-white
             overflow-hidden
         "
@@ -247,7 +247,7 @@ export default function PlanetPanel() {
 
         <div className="mt-5">
 
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-[clamp(1.5rem,3vw,1.875rem)] font-bold">
             From the Himalayas
             </h1>
 
@@ -499,12 +499,12 @@ export default function PlanetPanel() {
   className="
     pointer-events-auto
     absolute
-    left-8
-    bottom-8
-    w-[500px]
-    h-[400px]
+    left-[clamp(1rem,3vw,2rem)]
+    bottom-[clamp(1rem,3vh,2rem)]
+    w-[min(500px,40vw)]
+    h-[min(400px,45vh)]
     rounded-[24px]
-    p-5
+    p-[clamp(1rem,2vw,1.25rem)]
     text-white
     overflow-hidden
   "
@@ -562,7 +562,7 @@ export default function PlanetPanel() {
 
   <div className="mt-5">
 
-    <h1 className="text-2xl font-bold">
+    <h1 className="text-[clamp(1.25rem,2.5vw,1.5rem)] font-bold">
       What I Love Outside Technology
     </h1>
 
@@ -956,12 +956,12 @@ export default function PlanetPanel() {
   className="
     pointer-events-auto
     absolute
-    right-8
-    bottom-8
-    w-[500px]
-    h-[400px]
+    right-[clamp(1rem,3vw,2rem)]
+    bottom-[clamp(1rem,3vh,2rem)]
+    w-[min(500px,40vw)]
+    h-[min(400px,45vh)]
     rounded-[24px]
-    p-6
+    p-[clamp(1rem,2vw,1.5rem)]
     text-white
     overflow-hidden
   "
@@ -1021,7 +1021,7 @@ export default function PlanetPanel() {
 
   <div className="mt-5">
 
-    <h1 className="text-3xl font-bold">
+    <h1 className="text-[clamp(1.5rem,3vw,1.875rem)] font-bold">
       If I Chose Differently
     </h1>
 
@@ -1276,11 +1276,11 @@ export default function PlanetPanel() {
     <div
       className="
         absolute
-        right-10
+        right-[clamp(1rem,3vw,2.5rem)]
         top-1/2
         -translate-y-1/2
-        w-[420px]
-        h-[520px]
+        w-[min(420px,35vw)]
+        h-[min(520px,70vh)]
         rounded-3xl
         overflow-hidden
         text-white
@@ -1319,7 +1319,7 @@ export default function PlanetPanel() {
 
       <div className="p-8">
 
-        <h1 className="text-5xl font-bold">
+        <h1 className="text-[clamp(2rem,4vw,3rem)] font-bold">
           {data.icon} {data.title}
         </h1>
 

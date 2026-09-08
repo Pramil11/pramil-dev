@@ -5,27 +5,62 @@ import { useEffect } from "react";
 
 export default function SpaceBackground(){
 
+
     const texture = useTexture("/textures/background.png");
 
-    const { scene } = useThree();
+
+    const { scene, viewport } = useThree();
+
 
 
     useEffect(()=>{
 
-        texture.mapping = 300; // EquirectangularReflectionMapping
+
+        texture.mapping = 300;
+
 
         scene.background = texture.clone();
 
+
+
     },[texture,scene]);
+
+
+
+
+    const starRadius =
+        viewport.width < 8
+        ?
+        90
+        :
+        viewport.width < 14
+        ?
+        110
+        :
+        120;
+
+
+
+    const starDepth =
+        viewport.width < 8
+        ?
+        60
+        :
+        viewport.width < 14
+        ?
+        70
+        :
+        80;
+
 
 
     return (
 
         <Stars
 
-            radius={120}
+            radius={starRadius}
 
-            depth={80}
+            depth={starDepth}
 
             count={2500}
 

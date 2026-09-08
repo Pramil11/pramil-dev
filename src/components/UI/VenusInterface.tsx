@@ -526,6 +526,7 @@ export default function VenusInterface() {
         inset-0
         z-[50]
         pointer-events-none
+        overflow-hidden
       "
     >
 
@@ -538,12 +539,12 @@ export default function VenusInterface() {
         onClick={closePlanet}
         className="
           fixed
-          top-7
+          top-[clamp(1rem,3vh,1.75rem)]
           left-1/2
           -translate-x-1/2
           z-[100]
-          w-10
-          h-10
+          w-[clamp(2rem,4vw,2.5rem)]
+          h-[clamp(2rem,4vw,2.5rem)]
           rounded-full
           flex
           items-center
@@ -581,13 +582,13 @@ export default function VenusInterface() {
       <div
         className="
           absolute
-          left-7
-          top-30
-          bottom-7
-          w-[350px]
-          h-[750px]
+          left-[clamp(1rem,3vw,1.75rem)]
+          top-[clamp(5rem,12vh,7.5rem)]
+          bottom-[clamp(1rem,3vh,1.75rem)]
+          w-[min(350px,28vw)]
+          h-[min(750px,75vh)]
           rounded-[25px]
-          p-7
+          p-[clamp(1rem,2vw,1.75rem)]
           pointer-events-auto
           overflow-hidden
         "
@@ -635,7 +636,7 @@ export default function VenusInterface() {
         <h1
           className="
             mt-5
-            text-[34px]
+            text-[clamp(1.8rem,3vw,2.125rem)]
             leading-tight
             font-bold
             text-white
@@ -796,11 +797,12 @@ export default function VenusInterface() {
       <div
         className="
           absolute
-          left-[380px]
-          right-[380px]
+          left-[clamp(300px,22vw,380px)]
+          right-[clamp(300px,22vw,380px)]
           top-0
           bottom-0
           pointer-events-none
+        overflow-hidden
         "
       >
 
@@ -818,6 +820,7 @@ export default function VenusInterface() {
             z-[10]
             overflow-visible
             pointer-events-none
+        overflow-hidden
           "
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
@@ -944,8 +947,8 @@ export default function VenusInterface() {
                 items-center
                 gap-2
                 rounded-xl
-                px-3
-                py-2
+                px-[clamp(0.5rem,1vw,0.75rem)]
+                py-[clamp(0.35rem,0.8vw,0.5rem)]
                 whitespace-nowrap
                 pointer-events-auto
                 transition-all
@@ -1101,8 +1104,8 @@ export default function VenusInterface() {
             -translate-x-1/2
             -translate-y-1/2
             z-[50]
-            w-[165px]
-            h-[165px]
+            w-[clamp(110px,12vw,165px)]
+            h-[clamp(110px,12vw,165px)]
             rounded-full
             flex
             flex-col
@@ -1216,13 +1219,13 @@ export default function VenusInterface() {
       <div
         className="
           absolute
-          right-7
-          top-50
-          bottom-7
-          w-[350px]
-          h-[600px]
+          right-[clamp(1rem,3vw,1.75rem)]
+          top-[clamp(5rem,12vh,12rem)]
+          bottom-[clamp(1rem,3vh,1.75rem)]
+          w-[min(350px,28vw)]
+          h-[min(600px,70vh)]
           rounded-[25px]
-          p-7
+          p-[clamp(1rem,2vw,1.75rem)]
           pointer-events-auto
           overflow-hidden
         "
@@ -1278,7 +1281,7 @@ export default function VenusInterface() {
             <h2
               className="
                 mt-6
-                text-3xl
+                text-[clamp(1.5rem,3vw,1.875rem)]
                 font-bold
                 text-white
               "

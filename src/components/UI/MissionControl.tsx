@@ -132,11 +132,11 @@ export default function MissionControl(){
             className="
                 mission-control-panel
                 absolute
-                left-3
-                top-8
+                left-[clamp(0.75rem,2vw,1.5rem)]
+                top-[clamp(1rem,3vh,2rem)]
                 z-[100]
-                w-[330px]
-                max-h-[calc(100vh-64px)]
+                w-[min(330px,85vw)]
+                max-h-[calc(100vh-clamp(40px,8vh,64px))]
                 rounded-[28px]
                 overflow-hidden
                 text-white
@@ -169,7 +169,7 @@ export default function MissionControl(){
 
 
 
-            <div className="p-5">
+            <div className="p-[clamp(1rem,2vw,1.25rem)]">
 
 
                 {/* Header */}
@@ -226,7 +226,7 @@ export default function MissionControl(){
 
                             className="
                                 mt-2
-                                text-3xl
+                                text-[clamp(1.4rem,3vw,1.875rem)]
                                 font-bold
                                 tracking-wide
                             "
@@ -417,7 +417,7 @@ export default function MissionControl(){
 
                         className="
                             space-y-1
-                            max-h-[510px]
+                            max-h-[min(510px,45vh)]
                             overflow-y-auto
                             pr-1
                             scrollbar-thin
@@ -461,7 +461,7 @@ export default function MissionControl(){
                                         w-full
                                         text-left
                                         rounded-xl
-                                        p-3
+                                        p-[clamp(0.6rem,1vw,0.75rem)]
                                         transition-all
                                         duration-300
                                         overflow-hidden
@@ -521,8 +521,8 @@ export default function MissionControl(){
                                                 flex
                                                 items-center
                                                 justify-center
-                                                w-9
-                                                h-9
+                                                w-[clamp(2rem,3vw,2.25rem)]
+                                                h-[clamp(2rem,3vw,2.25rem)]
                                                 rounded-full
                                                 border
                                                 border-white/10
@@ -541,7 +541,7 @@ export default function MissionControl(){
                                             <span
 
                                                 className="
-                                                    text-xl
+                                                    text-[clamp(1rem,2vw,1.25rem)]
                                                 "
 
                                             >

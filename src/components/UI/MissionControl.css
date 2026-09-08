@@ -1,33 +1,51 @@
 .mission-control-panel {
 
-    width: 330px;
+    width: clamp(280px, 22vw, 330px);
+
     color: white;
+
     background:
         linear-gradient(
             145deg,
             rgba(8, 18, 38, 0.88),
             rgba(4, 10, 25, 0.82)
         );
+
     border: 1px solid rgba(120, 200, 255, 0.28);
+
     border-radius: 24px;
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.55),
         0 0 35px rgba(50, 150, 255, 0.08);
+
     overflow: hidden;
 }
 
+
+/* TITLE */
+
 .mission-control-panel h1 {
+
     color: #ffffff;
 
     letter-spacing: 0.04em;
+
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 
     text-shadow:
         0 0 20px rgba(100, 200, 255, 0.2);
 }
 
+
+
+/* INNER CARDS */
+
 .mission-control-panel .rounded-2xl {
+
     background:
         rgba(20, 45, 75, 0.28);
 
@@ -35,10 +53,16 @@
         rgba(100, 190, 255, 0.16);
 
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+        inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
+
+
+/* DESTINATION CARD */
+
 .mission-destination {
+
     background:
         rgba(12, 30, 55, 0.42);
 
@@ -52,130 +76,362 @@
         box-shadow 0.25s ease;
 }
 
+
+
 .mission-destination:hover {
+
     transform: translateX(4px);
 
     background:
+
         linear-gradient(
             90deg,
-            rgba(30, 80, 120, 0.45),
-            rgba(20, 45, 80, 0.35)
+            rgba(30,80,120,0.45),
+            rgba(20,45,80,0.35)
         );
 
+
     border-color:
-        rgba(80, 190, 255, 0.42);
+        rgba(80,190,255,0.42);
+
 
     box-shadow:
-        0 6px 20px rgba(0, 0, 0, 0.25),
-        0 0 18px rgba(60, 180, 255, 0.08);
+
+        0 6px 20px rgba(0,0,0,0.25),
+
+        0 0 18px rgba(60,180,255,0.08);
 }
+
+
+
 
 .mission-destination-active {
+
+
     background:
+
         linear-gradient(
             90deg,
-            rgba(30, 90, 140, 0.55),
-            rgba(20, 55, 95, 0.4)
+            rgba(30,90,140,0.55),
+            rgba(20,55,95,0.4)
         );
 
+
     border-color:
-        rgba(90, 200, 255, 0.65);
+
+        rgba(90,200,255,0.65);
+
 
     box-shadow:
-        0 0 20px rgba(50, 180, 255, 0.12),
-        inset 0 0 20px rgba(50, 180, 255, 0.05);
+
+        0 0 20px rgba(50,180,255,0.12),
+
+        inset 0 0 20px rgba(50,180,255,0.05);
+
 }
+
+
+
+
+/* PLANET ICON */
 
 .mission-destination .rounded-full {
+
+
     background:
+
         radial-gradient(
             circle at 35% 30%,
-            rgba(70, 170, 230, 0.22),
-            rgba(3, 12, 28, 0.85)
+            rgba(70,170,230,0.22),
+            rgba(3,12,28,0.85)
         );
 
+
     border-color:
-        rgba(100, 190, 255, 0.22);
+
+        rgba(100,190,255,0.22);
+
 
     box-shadow:
-        inset 0 0 12px rgba(80, 180, 255, 0.08);
+
+        inset 0 0 12px rgba(80,180,255,0.08);
+
 }
+
+
+
+
+/* ARROW */
 
 .mission-destination > div > span:last-child {
+
+
     color:
-        rgba(130, 200, 240, 0.35);
+
+        rgba(130,200,240,0.35);
+
 
     transition:
+
         transform 0.25s ease,
+
         color 0.25s ease;
+
 }
+
+
 
 .mission-destination:hover > div > span:last-child {
+
+
     color:
-        rgba(150, 220, 255, 0.95);
+
+        rgba(150,220,255,0.95);
+
 
     transform:
+
         translateX(4px);
+
 }
+
+
+
+/* TEXT */
+
 
 .mission-destination .text-sm {
-    color: rgba(255, 255, 255, 0.92);
+
+    color:
+        rgba(255,255,255,0.92);
+
 }
+
 
 .mission-destination p {
-    color: rgba(190, 210, 230, 0.5);
+
+    color:
+
+        rgba(190,210,230,0.5);
+
 }
+
+
+
+
+/* DIVIDERS */
+
 
 .mission-control-panel .border-t {
+
+
     border-color:
-        rgba(100, 190, 255, 0.12);
+
+        rgba(100,190,255,0.12);
+
 }
 
-.mission-control-panel ::-webkit-scrollbar {
-    width: 4px;
+
+
+
+/* SCROLLBAR */
+
+
+.mission-control-panel::-webkit-scrollbar {
+
+    width:4px;
+
 }
 
-.mission-control-panel ::-webkit-scrollbar-track {
-    background: transparent;
+
+.mission-control-panel::-webkit-scrollbar-track {
+
+    background:transparent;
+
 }
 
-.mission-control-panel ::-webkit-scrollbar-thumb {
+
+.mission-control-panel::-webkit-scrollbar-thumb {
+
+
     background:
-        rgba(80, 180, 240, 0.35);
 
-    border-radius: 10px;
+        rgba(80,180,240,0.35);
+
+
+    border-radius:10px;
+
 }
 
-.mission-control-panel ::-webkit-scrollbar-thumb:hover {
+
+.mission-control-panel::-webkit-scrollbar-thumb:hover {
+
+
     background:
-        rgba(100, 200, 255, 0.7);
+
+        rgba(100,200,255,0.7);
+
 }
+
+
+
+/* ONLINE INDICATOR */
+
 
 .mission-control-panel .bg-emerald-400 {
+
+
     animation:
+
         pramil-online-pulse 2.2s ease-in-out infinite;
+
 }
+
+
 
 @keyframes pramil-online-pulse {
 
+
     0%,
     100% {
-        opacity: 0.6;
+
+        opacity:0.6;
+
         box-shadow:
-            0 0 4px rgba(52, 211, 153, 0.4);
+
+            0 0 4px rgba(52,211,153,0.4);
+
     }
+
+
 
     50% {
-        opacity: 1;
+
+
+        opacity:1;
+
+
         box-shadow:
-            0 0 10px rgba(52, 211, 153, 0.8);
+
+            0 0 10px rgba(52,211,153,0.8);
+
     }
+
 }
 
-@media (max-width: 700px) {
+
+
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+
+@media (max-width:1200px) {
+
 
     .mission-control-panel {
+
+
         width:
-            calc(100vw - 32px);
+
+            clamp(260px,25vw,310px);
+
     }
+
+
+}
+
+
+
+
+@media (max-width:900px) {
+
+
+    .mission-control-panel {
+
+
+        width:
+
+            min(300px,80vw);
+
+
+    }
+
+
+    .mission-control-panel h1 {
+
+
+        font-size:
+
+            clamp(1.1rem,3vw,1.4rem);
+
+    }
+
+
+}
+
+
+
+
+
+@media (max-width:700px) {
+
+
+    .mission-control-panel {
+
+
+        width:
+
+            calc(100vw - 32px);
+
+
+        max-width:
+
+            330px;
+
+
+        border-radius:
+
+            20px;
+
+    }
+
+
+}
+
+
+
+
+
+@media (max-width:480px) {
+
+
+    .mission-control-panel {
+
+
+        width:
+
+            calc(100vw - 20px);
+
+
+        border-radius:
+
+            18px;
+
+    }
+
+
+
+    .mission-destination {
+
+
+        padding:
+
+            0.75rem;
+
+    }
+
+
 }

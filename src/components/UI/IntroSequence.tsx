@@ -17,6 +17,7 @@ usePlanetStore(
 state=>state.setIntroFinished
 );
 
+
 useEffect(()=>{
 
 
@@ -65,6 +66,7 @@ return ()=>clearTimeout(start);
 
 
 },[]);
+
 
 
 
@@ -122,6 +124,7 @@ return (
 <div
 
 className={`
+
 fixed
 inset-0
 z-50
@@ -134,7 +137,9 @@ duration-[2500ms]
 
 ${phase===2
 ?
-"bg-transparent scale-[1.8] opacity-0":"bg-gradient"
+"bg-transparent scale-[1.8] opacity-0"
+:
+"bg-gradient"
 }
 
 `}
@@ -145,6 +150,7 @@ ${phase===2
 <div
 
 className={`
+
 text-center
 
 transition-all
@@ -152,7 +158,7 @@ duration-[5000ms]
 
 ${phase===2
 ?
-"scale-[2]"
+"scale-[clamp(1.4,8vw,2)]"
 :
 "scale-100"
 }
@@ -165,10 +171,15 @@ ${phase===2
 <h1
 
 className="
-text-4xl
+
+text-[clamp(1.8rem,5vw,2.25rem)]
+
 font-bold
+
 tracking-[0.3em]
+
 text-yellow-400
+
 "
 
 >
@@ -177,6 +188,8 @@ text-yellow-400
 
 
 </h1>
+
+
 
 
 
@@ -189,10 +202,15 @@ phase>=1 &&
 <p
 
 className="
-mt-10
-text-2xl
+
+mt-[clamp(1.5rem,4vh,2.5rem)]
+
+text-[clamp(1rem,3vw,1.5rem)]
+
 text-gray-300
+
 leading-relaxed
+
 "
 
 >

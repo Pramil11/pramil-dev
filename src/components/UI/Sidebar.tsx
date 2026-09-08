@@ -6,16 +6,26 @@ return (
 
 className="
 absolute
-top-8
-left-8
-w-64
+
+top-[clamp(1rem,3vh,2rem)]
+left-[clamp(1rem,3vw,2rem)]
+
+w-[min(16rem,85vw)]
+
 rounded-2xl
+
 bg-black/60
+
 backdrop-blur-xl
+
 border
+
 border-white/10
+
 text-white
-p-6
+
+p-[clamp(1rem,2vw,1.5rem)]
+
 "
 
 >
@@ -24,7 +34,7 @@ p-6
 <h1
 
 className="
-text-2xl
+text-[clamp(1.25rem,3vw,1.5rem)]
 font-bold
 text-yellow-400
 "
@@ -36,12 +46,13 @@ PRAMILVERSE
 </h1>
 
 
+
 <p
 
 className="
-text-xs
+text-[clamp(0.65rem,1.5vw,0.75rem)]
 text-gray-400
-mb-8
+mb-[clamp(1.5rem,4vh,2rem)]
 "
 
 >
@@ -52,7 +63,14 @@ EXPLORE. DISCOVER. INNOVATE.
 
 
 
-<div className="space-y-5">
+<div 
+
+className="
+space-y-[clamp(0.75rem,2vh,1.25rem)]
+text-[clamp(0.85rem,1.5vw,1rem)]
+"
+
+>
 
 
 <div>🌌 Galaxy Map</div>

@@ -18,15 +18,24 @@ import MercuryInterface from "./components/UI/MercuryInterface";
 import VenusInterface from "./components/UI/VenusInterface";
 import MarsInterface from "./components/UI/MarsInterface";
 
+
+
 function App(){
-  const selectedPlanet =
-  usePlanetStore(
-  state=>state.selectedPlanet
-  );
-  const closePlanet =
-  usePlanetStore(
-    state=>state.closePlanet
-  )
+
+
+const selectedPlanet =
+usePlanetStore(
+state=>state.selectedPlanet
+);
+
+
+const closePlanet =
+usePlanetStore(
+state=>state.closePlanet
+);
+
+
+
 return (
 
 <div
@@ -42,7 +51,191 @@ relative
 >
 
 
+{/* ========================= */}
+{/* RESPONSIVE UI LAYER */}
+{/* ========================= */}
+
+
+<div
+
+className="
+absolute
+inset-0
+z-10
+pointer-events-none
+"
+
+>
+
+
+<div
+
+className="
+w-full
+h-full
+relative
+pointer-events-none
+"
+
+>
+
+
+{selectedPlanet &&
+ selectedPlanet.name !== "Mercury" &&
+ selectedPlanet.name !== "Venus" &&
+ selectedPlanet.name !== "Mars" && (
+<PlanetPanel />
+)}
+
+
+
+{selectedPlanet?.name === "Sun" && (
+
+<>
+
+<button
+onClick={closePlanet}
+
+className="
+fixed
+left-1/2
+top-[clamp(1rem,3vh,2rem)]
+-translate-x-1/2
+
+z-[60]
+
+pointer-events-auto
+
+w-[clamp(2rem,4vw,2.5rem)]
+h-[clamp(2rem,4vw,2.5rem)]
+
+rounded-full
+
+flex
+items-center
+justify-center
+
+text-white/80
+
+text-[clamp(0.9rem,2vw,1.1rem)]
+
+cursor-pointer
+
+transition-all
+duration-300
+
+hover:scale-110
+hover:text-white
+"
+
+style={{
+
+background:
+"rgba(15,15,20,0.75)",
+
+border:
+"1px solid rgba(255,190,70,0.35)",
+
+backdropFilter:
+"blur(12px)",
+
+WebkitBackdropFilter:
+"blur(12px)",
+
+boxShadow:
+"0 0 20px rgba(255,190,50,0.12)",
+
+}}
+
+>
+
+✕
+
+</button>
+
+
+<CoreInterface />
+
+</>
+
+)}
+
+
+
+
+
+{selectedPlanet?.name === "Mercury" && (
+
+<MercuryInterface />
+
+)}
+
+
+
+
+{selectedPlanet?.name === "Venus" && (
+
+<VenusInterface />
+
+)}
+
+
+
+
+
+{selectedPlanet?.name === "Mars" && (
+
+<MarsInterface />
+
+)}
+
+
+
+
+
+
+{
+
+!selectedPlanet && (
+
+<>
+
+<div className="pointer-events-auto">
+
+<MissionControl />
+
+<WelcomeCard />
+
+<SystemCard />
+
+<BottomCards />
+
+</div>
+
+</>
+
+)
+
+}
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+{/* ========================= */}
+{/* THREE JS WORLD */}
+{/* ========================= */}
+
+
 <Canvas
+
+dpr={[1,2]}
 
 camera={{
 
@@ -58,25 +251,28 @@ fov:50
 <Suspense fallback={null}>
 
 
-{/* Space background */}
-
 <SpaceBackground />
+
 
 <ambientLight intensity={0.15}/>
 
+
 <directionalLight
-    position={[5,10,5]}
-    intensity={2}
+
+position={[5,10,5]}
+
+intensity={2}
+
 />
 
-{/* Main planets */}
+
 
 <SolarSystem />
 
-<CameraController/>
+
+<CameraController />
 
 
-{/* Lighting */}
 
 <ambientLight
 
@@ -99,7 +295,6 @@ color="#ffcc66"
 
 
 
-{/* Sun glow */}
 
 <EffectComposer>
 
@@ -120,115 +315,22 @@ radius={0.9}
 </EffectComposer>
 
 
+
 </Suspense>
 
 
 </Canvas>
 
+
+
+
 <IntroSequence />
 
-{/* ================================================= */}
-{/* NORMAL PLANET PANEL */}
-{/* ================================================= */}
-
-{selectedPlanet &&
- selectedPlanet.name !== "Mercury" &&
- selectedPlanet.name !== "Venus" &&
- selectedPlanet.name !== "Mars" && (
-<PlanetPanel />
-)}
-
-
-{/* ================================================= */}
-{/* SUN / CORE */}
-{/* ================================================= */}
-
-{selectedPlanet?.name === "Sun" && (
-  <>
-    {/* CLOSE SUN / RETURN TO GALAXY */}
-
-    <button
-      onClick={closePlanet}
-      className="
-        fixed
-        left-1/2
-        top-8
-        -translate-x-1/2
-        z-[60]
-        pointer-events-auto
-        w-10
-        h-10
-        rounded-full
-        flex
-        items-center
-        justify-center
-        text-white/80
-        text-lg
-        cursor-pointer
-        transition-all
-        duration-300
-        hover:scale-110
-        hover:text-white
-      "
-      style={{
-        background: "rgba(15,15,20,0.75)",
-        border: "1px solid rgba(255,190,70,0.35)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        boxShadow:
-          "0 0 20px rgba(255,190,50,0.12)",
-      }}
-    >
-      ✕
-    </button>
-
-    <CoreInterface />
-  </>
-)}
-
-
-{/* ================================================= */}
-{/* MERCURY / JOURNEY */}
-{/* ================================================= */}
-
-{selectedPlanet?.name === "Mercury" && (
-  <MercuryInterface />
-)}
-{/* ================================================= */}
-{/* VENUS / SKILLS */}
-{/* ================================================= */}
-
-{selectedPlanet?.name === "Venus" && (
-  <VenusInterface />
-)}
-
-{/* ================================================= */
-/* MARS / EXPERIENCE */
-/* ================================================= */}
-
-{selectedPlanet?.name === "Mars" && (
-  <MarsInterface />
-)}
-
-{/* Interface */}
-
-{
-!selectedPlanet && (
-<>
-<MissionControl />
-
-<WelcomeCard />
-
-<SystemCard />
-
-<BottomCards />
-</>
-)
-}
 
 </div>
 
 );
+
 }
 
 

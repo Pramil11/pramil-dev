@@ -3,9 +3,11 @@ export default function WelcomeCard() {
     <div
       className="
         absolute
-        top-8
-        left-[365px]
-        w-[400px]
+
+        top-[clamp(1rem,3vh,2rem)]
+        left-[clamp(280px,25vw,365px)]
+
+        w-[min(400px,35vw)]
 
         rounded-2xl
 
@@ -17,7 +19,7 @@ export default function WelcomeCard() {
 
         text-white
 
-        p-4
+        p-[clamp(0.75rem,1.5vw,1rem)]
 
         shadow-[0_15px_40px_rgba(0,0,0,0.35)]
 
@@ -26,10 +28,11 @@ export default function WelcomeCard() {
     >
 
       <div className="flex items-center gap-2 mb-3">
+
         <span
           className="
-            w-2
-            h-2
+            w-[clamp(6px,1vw,8px)]
+            h-[clamp(6px,1vw,8px)]
             rounded-full
             bg-cyan-400
             shadow-[0_0_8px_rgba(34,211,238,0.8)]
@@ -38,7 +41,7 @@ export default function WelcomeCard() {
 
         <span
           className="
-            text-[10px]
+            text-[clamp(8px,1vw,10px)]
             tracking-[0.25em]
             uppercase
             text-cyan-300/60
@@ -46,13 +49,28 @@ export default function WelcomeCard() {
         >
           Mission Briefing
         </span>
+
       </div>
 
-      <h2 className="text-xl font-bold">
+
+      <h2
+        className="
+          text-[clamp(1rem,2vw,1.25rem)]
+          font-bold
+        "
+      >
         Welcome, Explorer! 👋
       </h2>
 
-      <p className="text-gray-400 mt-3 leading-relaxed">
+
+      <p
+        className="
+          text-[clamp(0.75rem,1.5vw,1rem)]
+          text-gray-400
+          mt-3
+          leading-relaxed
+        "
+      >
         The universe is vast and full of possibilities.
 
         <br />
@@ -60,27 +78,36 @@ export default function WelcomeCard() {
         Choose a destination to begin your journey.
       </p>
 
+
       <div
         className="
-          mt-4
-          pt-3
+          mt-[clamp(0.75rem,2vh,1rem)]
+          pt-[clamp(0.5rem,1vh,0.75rem)]
+
           border-t
           border-white/10
+
           flex
           justify-between
-          text-[9px]
+
+          text-[clamp(7px,1vw,9px)]
+
           tracking-[0.2em]
           uppercase
         "
       >
+
         <span className="text-gray-500">
           Navigation System
         </span>
 
+
         <span className="text-emerald-400">
           ● Ready
         </span>
+
       </div>
+
 
     </div>
   );

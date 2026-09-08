@@ -3,9 +3,11 @@ export default function SystemCard() {
     <div
       className="
         absolute
-        top-8
-        right-8
-        w-[250px]
+
+        top-[clamp(1rem,3vh,2rem)]
+        right-[clamp(1rem,3vw,2rem)]
+
+        w-[min(250px,85vw)]
 
         rounded-2xl
 
@@ -17,7 +19,7 @@ export default function SystemCard() {
 
         text-white
 
-        p-5
+        p-[clamp(1rem,2vw,1.25rem)]
 
         shadow-[0_15px_40px_rgba(0,0,0,0.35)]
 
@@ -29,7 +31,7 @@ export default function SystemCard() {
 
         <h3
           className="
-            text-[10px]
+            text-[clamp(8px,1vw,10px)]
             tracking-[0.25em]
             uppercase
             text-purple-300/60
@@ -38,10 +40,11 @@ export default function SystemCard() {
           System Time
         </h3>
 
+
         <span
           className="
-            w-2
-            h-2
+            w-[clamp(6px,1vw,8px)]
+            h-[clamp(6px,1vw,8px)]
             rounded-full
             bg-emerald-400
             shadow-[0_0_10px_rgba(52,211,153,0.8)]
@@ -50,35 +53,60 @@ export default function SystemCard() {
 
       </div>
 
-      <p className="text-2xl mt-2 font-semibold">
+
+      <p
+        className="
+          text-[clamp(1.2rem,3vw,1.5rem)]
+          mt-2
+          font-semibold
+        "
+      >
         12:45:32 PM
       </p>
 
-      <p className="text-sm text-gray-500 mt-1">
+
+      <p
+        className="
+          text-[clamp(0.7rem,1.5vw,0.875rem)]
+          text-gray-500
+          mt-1
+        "
+      >
         Exploring Since: 2026
       </p>
 
+
+
       <div
         className="
-          mt-4
-          pt-3
+          mt-[clamp(0.75rem,2vh,1rem)]
+          pt-[clamp(0.5rem,1vh,0.75rem)]
+
           border-t
           border-white/10
+
           flex
           justify-between
-          text-[9px]
+
+          text-[clamp(7px,1vw,9px)]
+
           tracking-[0.2em]
           uppercase
         "
       >
+
         <span className="text-gray-500">
           Local Telemetry
         </span>
 
+
         <span className="text-cyan-400">
           Active
         </span>
+
+
       </div>
+
 
     </div>
   );
