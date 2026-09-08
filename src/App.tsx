@@ -14,7 +14,7 @@ import SystemCard from "./components/UI/SystemCard";
 import BottomCards from "./components/UI/BottomCards";
 import IntroSequence from "./components/UI/IntroSequence";
 import CoreInterface from "./components/UI/CoreInterface";
-
+import MercuryInterface from "./components/UI/MercuryInterface";
 
 function App(){
   const selectedPlanet =
@@ -125,13 +125,23 @@ radius={0.9}
 
 <IntroSequence />
 
+{/* ================================================= */}
+{/* NORMAL PLANET PANEL */}
+{/* ================================================= */}
+
+{selectedPlanet &&
+ selectedPlanet.name !== "Mercury" && (
 <PlanetPanel />
+)}
+
+
+{/* ================================================= */}
+{/* SUN / CORE */}
+{/* ================================================= */}
 
 {selectedPlanet?.name === "Sun" && (
   <>
-    {/* ================================================= */}
     {/* CLOSE SUN / RETURN TO GALAXY */}
-    {/* ================================================= */}
 
     <button
       onClick={closePlanet}
@@ -170,6 +180,15 @@ radius={0.9}
 
     <CoreInterface />
   </>
+)}
+
+
+{/* ================================================= */}
+{/* MERCURY / JOURNEY */}
+{/* ================================================= */}
+
+{selectedPlanet?.name === "Mercury" && (
+  <MercuryInterface />
 )}
 
 

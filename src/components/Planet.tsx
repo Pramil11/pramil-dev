@@ -106,7 +106,7 @@ return (
         <sphereGeometry
 
         args={[
-            isSelected ? 2.7 :
+            isSelected ? 1.5 :
             size * 1.4,
             64,
             64
