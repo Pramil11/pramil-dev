@@ -2,12 +2,10 @@ export default function SystemCard() {
   return (
     <div
       className="
-        absolute
+        relative
 
-        top-[clamp(1rem,3vh,2rem)]
-        right-[clamp(1rem,3vw,2rem)]
-
-        w-[min(250px,85vw)]
+        w-full
+        max-w-[250px]
 
         rounded-2xl
 
@@ -80,6 +78,7 @@ export default function SystemCard() {
       <div
         className="
           mt-[clamp(0.75rem,2vh,1rem)]
+
           pt-[clamp(0.5rem,1vh,0.75rem)]
 
           border-t
@@ -91,6 +90,7 @@ export default function SystemCard() {
           text-[clamp(7px,1vw,9px)]
 
           tracking-[0.2em]
+
           uppercase
         "
       >

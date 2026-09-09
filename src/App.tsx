@@ -6,19 +6,23 @@ import SolarSystem from "./components/SolarSystem";
 import SpaceBackground from "./components/SpaceBackground";
 import CameraController from "./components/CameraController";
 import PlanetPanel from "./components/PlanetPanel";
-import {usePlanetStore} from "./store/planetStore";
+
+import { usePlanetStore } from "./store/planetStore";
 
 import MissionControl from "./components/UI/MissionControl";
 import WelcomeCard from "./components/UI/WelcomeCard";
 import SystemCard from "./components/UI/SystemCard";
 import BottomCards from "./components/UI/BottomCards";
 import IntroSequence from "./components/UI/IntroSequence";
+
 import CoreInterface from "./components/UI/CoreInterface";
 import MercuryInterface from "./components/UI/MercuryInterface";
 import VenusInterface from "./components/UI/VenusInterface";
 import MarsInterface from "./components/UI/MarsInterface";
 
+
 function App(){
+
 
 const selectedPlanet =
 usePlanetStore(
@@ -48,182 +52,6 @@ relative
 >
 
 
-{/* ========================= */}
-{/* RESPONSIVE UI LAYER */}
-{/* ========================= */}
-
-
-<div
-
-className="
-absolute
-inset-0
-z-10
-pointer-events-none
-"
-
->
-
-
-<div
-
-className="
-w-full
-h-full
-relative
-pointer-events-none
-"
-
->
-
-
-{selectedPlanet &&
- selectedPlanet.name !== "Mercury" &&
- selectedPlanet.name !== "Venus" &&
- selectedPlanet.name !== "Mars" && (
-<PlanetPanel />
-)}
-
-
-
-{selectedPlanet?.name === "Sun" && (
-
-<>
-
-<button
-onClick={closePlanet}
-
-className="
-fixed
-left-1/2
-top-[clamp(1rem,3vh,2rem)]
--translate-x-1/2
-
-z-[60]
-
-pointer-events-auto
-
-w-[clamp(2rem,4vw,2.5rem)]
-h-[clamp(2rem,4vw,2.5rem)]
-
-rounded-full
-
-flex
-items-center
-justify-center
-
-text-white/80
-
-text-[clamp(0.9rem,2vw,1.1rem)]
-
-cursor-pointer
-
-transition-all
-duration-300
-
-hover:scale-110
-hover:text-white
-"
-
-style={{
-
-background:
-"rgba(15,15,20,0.75)",
-
-border:
-"1px solid rgba(255,190,70,0.35)",
-
-backdropFilter:
-"blur(12px)",
-
-WebkitBackdropFilter:
-"blur(12px)",
-
-boxShadow:
-"0 0 20px rgba(255,190,50,0.12)",
-
-}}
-
->
-
-✕
-
-</button>
-
-
-<CoreInterface />
-
-</>
-
-)}
-
-
-
-
-
-{selectedPlanet?.name === "Mercury" && (
-
-<MercuryInterface />
-
-)}
-
-
-
-
-{selectedPlanet?.name === "Venus" && (
-
-<VenusInterface />
-
-)}
-
-
-
-
-
-{selectedPlanet?.name === "Mars" && (
-
-<MarsInterface />
-
-)}
-
-
-
-
-
-
-{
-
-!selectedPlanet && (
-
-<>
-
-<div className="pointer-events-auto">
-
-<MissionControl />
-
-<WelcomeCard />
-
-<SystemCard />
-
-<BottomCards />
-
-</div>
-
-</>
-
-)
-
-}
-
-
-
-</div>
-
-</div>
-
-
-
-
 
 {/* ========================= */}
 {/* THREE JS WORLD */}
@@ -231,6 +59,8 @@ boxShadow:
 
 
 <Canvas
+
+className="absolute inset-0"
 
 dpr={[1,2]}
 
@@ -271,11 +101,7 @@ intensity={2}
 
 
 
-<ambientLight
-
-intensity={0.25}
-
-/>
+<ambientLight intensity={0.25}/>
 
 
 <pointLight
@@ -289,7 +115,6 @@ distance={50}
 color="#ffcc66"
 
 />
-
 
 
 
@@ -312,11 +137,402 @@ radius={0.9}
 </EffectComposer>
 
 
-
 </Suspense>
 
 
 </Canvas>
+
+
+
+
+
+{/* ========================= */}
+{/* RESPONSIVE UI LAYER */}
+{/* ========================= */}
+
+
+
+<div
+
+className="
+absolute
+inset-0
+z-20
+
+pointer-events-none
+
+p-4
+
+
+grid
+
+grid-cols-[minmax(240px,330px)_1fr_minmax(220px,280px)]
+
+grid-rows-[auto_1fr_auto]
+
+gap-4
+
+
+max-xl:grid-cols-[260px_1fr_minmax(200px,250px)]
+
+
+max-lg:grid-cols-2
+
+
+max-md:flex
+
+max-md:flex-col
+
+max-md:overflow-y-auto
+
+"
+
+>
+
+
+
+
+
+
+{/* ========================= */}
+{/* NORMAL GALAXY HUD */}
+{/* ========================= */}
+
+
+
+{
+
+!selectedPlanet && (
+
+<>
+
+
+
+
+
+{/* LEFT PANEL */}
+
+<div
+
+className="
+pointer-events-auto
+
+row-span-2
+
+flex
+
+items-start
+
+"
+
+>
+
+<MissionControl />
+
+</div>
+
+
+
+
+
+
+
+{/* CENTER TOP */}
+
+<div
+
+className="
+pointer-events-auto
+
+flex
+
+justify-center
+
+items-start
+
+
+max-lg:col-span-1
+
+"
+
+>
+
+<WelcomeCard />
+
+</div>
+
+
+
+
+
+
+
+{/* RIGHT PANEL */}
+
+<div
+
+className="
+pointer-events-auto
+
+flex
+
+justify-end
+
+items-start
+
+"
+
+>
+
+<SystemCard />
+
+</div>
+
+
+
+
+
+
+
+
+{/* BOTTOM CARDS */}
+
+<div
+
+className="
+pointer-events-auto
+
+col-span-3
+
+flex
+
+justify-center
+
+items-end
+
+
+max-lg:col-span-2
+
+
+max-md:col-span-1
+
+"
+
+>
+
+<BottomCards />
+
+</div>
+
+
+
+
+
+</>
+
+)
+
+}
+
+
+
+
+
+
+
+{/* ========================= */}
+{/* PLANET PANEL */}
+{/* ========================= */}
+
+
+
+{
+
+selectedPlanet &&
+
+selectedPlanet.name !== "Mercury" &&
+
+selectedPlanet.name !== "Venus" &&
+
+selectedPlanet.name !== "Mars" &&
+
+(
+
+<PlanetPanel />
+
+)
+
+}
+
+
+
+
+
+
+
+{/* ========================= */}
+{/* SUN */}
+{/* ========================= */}
+
+
+
+{
+
+selectedPlanet?.name === "Sun" &&
+
+(
+
+<>
+
+<button
+
+onClick={closePlanet}
+
+className="
+
+fixed
+
+top-4
+
+left-1/2
+
+-translate-x-1/2
+
+
+z-[60]
+
+pointer-events-auto
+
+
+w-10
+
+h-10
+
+
+rounded-full
+
+
+flex
+
+items-center
+
+justify-center
+
+
+text-white/80
+
+
+bg-black/60
+
+
+border
+
+border-yellow-400/30
+
+
+backdrop-blur-xl
+
+
+hover:scale-110
+
+
+transition-all
+
+"
+
+>
+
+✕
+
+</button>
+
+
+
+<CoreInterface />
+
+</>
+
+)
+
+}
+
+
+
+
+
+
+
+{/* ========================= */}
+{/* MERCURY */}
+{/* ========================= */}
+
+
+
+{
+
+selectedPlanet?.name === "Mercury" &&
+
+(
+
+<MercuryInterface />
+
+)
+
+}
+
+
+
+
+
+
+
+{/* ========================= */}
+{/* VENUS */}
+{/* ========================= */}
+
+
+
+{
+
+selectedPlanet?.name === "Venus" &&
+
+(
+
+<VenusInterface />
+
+)
+
+}
+
+
+
+
+
+
+
+{/* ========================= */}
+{/* MARS */}
+{/* ========================= */}
+
+
+
+{
+
+selectedPlanet?.name === "Mars" &&
+
+(
+
+<MarsInterface />
+
+)
+
+}
+
+
+
+</div>
+
+
 
 
 

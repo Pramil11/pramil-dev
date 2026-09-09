@@ -2,12 +2,10 @@ export default function WelcomeCard() {
   return (
     <div
       className="
-        absolute
+        relative
 
-        top-[clamp(1rem,3vh,2rem)]
-        left-[clamp(280px,25vw,365px)]
-
-        w-[min(400px,35vw)]
+        w-full
+        max-w-[400px]
 
         rounded-2xl
 
@@ -82,6 +80,7 @@ export default function WelcomeCard() {
       <div
         className="
           mt-[clamp(0.75rem,2vh,1rem)]
+
           pt-[clamp(0.5rem,1vh,0.75rem)]
 
           border-t
@@ -93,6 +92,7 @@ export default function WelcomeCard() {
           text-[clamp(7px,1vw,9px)]
 
           tracking-[0.2em]
+
           uppercase
         "
       >
@@ -105,6 +105,7 @@ export default function WelcomeCard() {
         <span className="text-emerald-400">
           ● Ready
         </span>
+
 
       </div>
 

@@ -131,12 +131,11 @@ export default function MissionControl(){
 
             className="
                 mission-control-panel
-                absolute
-                left-[clamp(0.75rem,2vw,1.5rem)]
-                top-[clamp(1rem,3vh,2rem)]
+                relative
                 z-[100]
-                w-[min(330px,85vw)]
-                max-h-[calc(100vh-clamp(40px,8vh,64px))]
+                w-full
+                max-w-[330px]
+                max-h-full
                 rounded-[28px]
                 overflow-hidden
                 text-white
@@ -169,7 +168,7 @@ export default function MissionControl(){
 
 
 
-            <div className="p-[clamp(1rem,2vw,1.25rem)]">
+            <div className="p-[clamp(0.75rem,2vw,1.25rem)]">
 
 
                 {/* Header */}

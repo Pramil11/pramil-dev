@@ -3,13 +3,10 @@ export default function BottomCards() {
 
     <div 
       className=" 
-        absolute 
+        relative
 
-        bottom-[2vh]
-
-        left-[min(365px,25vw)]
-
-        right-[2vw]
+        w-full
+        max-w-[1000px]
 
         flex
 
@@ -20,7 +17,9 @@ export default function BottomCards() {
       " 
     > 
  
+
       {/* NOW PLAYING */} 
+
       <div 
         className=" 
           flex-1 
@@ -66,7 +65,7 @@ export default function BottomCards() {
             via-cyan-400 
             to-transparent 
             opacity-60 
-          " 
+          "
         /> 
  
         <div 
@@ -74,7 +73,7 @@ export default function BottomCards() {
             flex 
             items-center 
             gap-2
-          " 
+          "
         > 
  
           <span 
@@ -134,6 +133,7 @@ export default function BottomCards() {
         </div>
 
       </div>
+
 
 
       {/* ACTIVE MISSION */} 
@@ -249,6 +249,8 @@ export default function BottomCards() {
         </div>
 
       </div>
+
+
 
 
       {/* SYSTEM STATUS */}
